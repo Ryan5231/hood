@@ -1,0 +1,12 @@
+<div class="container">
+  <h1> Welcome to Our Backyard! </h1>
+  <div id="sign-in">
+    <h3> Sign in </h3>
+    <%= render 'users/user_signin_form', :user => @user %>
+  </div>
+
+  <div id="sign-up">
+    <h3> Sign up </h3>
+    <%= render 'users/user_form', :user => @user %>
+  </div>  
+</div>
