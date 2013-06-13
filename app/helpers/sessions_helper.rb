@@ -2,9 +2,7 @@ module SessionsHelper
 
   def current_user
     if session[:id]
-      User.find(session[:id])
-    else
-      false
+      @current_user ||= User.find(session[:id])
     end
   end
 
