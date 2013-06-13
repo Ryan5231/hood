@@ -1,14 +1,21 @@
+
 <nav>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-      <% if current_user %>
-        <li><%= link_to "Profile", "#" %></li>
-        <li><%= link_to "My Neighborhood", '#' %></li>
-        <li><%= link_to "Logout", '#' %></li>
-      <% else %>
-        <li><%= link_to "Login", '#' %></li>
-        <li><%= link_to "Sign Up", new_user_path %></li>
-      <% end %>
-  </ul>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul class="nav">
+          <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+              <li><%= link_to "Profile", "#" %></li>
+              <li><%= link_to "My Neighborhood", '#' %></li>
+              <li><%= link_to "Logout", '#' %></li>
+            <% else %>
+              <li><%= link_to "Login", '#' %></li>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
 
