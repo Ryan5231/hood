@@ -1,0 +1,5 @@
+<h1><%= @listing.title %></h1>
+
+<% @listing.choices.each do |choice| %>
+  <%= render 'choices_voting', :choice => choice %>
+<% end %>

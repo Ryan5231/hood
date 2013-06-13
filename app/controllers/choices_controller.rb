@@ -7,4 +7,7 @@ class ChoicesController < ApplicationController
       # do something here
     end
   end
+
+  def vote
+  end
 end
