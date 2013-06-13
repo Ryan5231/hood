@@ -7,6 +7,8 @@
   <%= f.password_field :password %><br />
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %><br />
+  <%= label(:neighborhood, "My Neighborhood") %>
+  <%= select_tag(:neighborhood, options_from_collection_for_select(Neighborhood.all, :id, :name)) %>
   <%= f.submit %>
 <% end %>
 
