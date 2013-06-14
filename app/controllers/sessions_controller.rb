@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   
   def create
+  	puts "Called create session++++++++++"
     authenticate_user(params["user"])
   end
 

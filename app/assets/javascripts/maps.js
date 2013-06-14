@@ -3,7 +3,7 @@ function initialize() {
   var geocoder = new google.maps.Geocoder();
   var hood = $('#map-canvas').data().hood;
   geocoder.geocode( {'address': hood}, function(results, status){
-    var lat = results[0].geometry.location.jb
+    var lat = results[0].geometry.location.jb;
     var lng = results[0].geometry.location.kb;
     var mapOptions = {
       zoom: 14,
