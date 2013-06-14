@@ -1,0 +1,6 @@
+<%= form_for @choice do |f|%>
+  <%= f.label :content, "What should I be?" %>
+  <%= f.text_field :content %>
+  <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
+  <%= f.submit "Create Choice" %>
+<% end %>

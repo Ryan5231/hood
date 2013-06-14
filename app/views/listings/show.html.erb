@@ -3,3 +3,4 @@
 <% @listing.choices.each do |choice| %>
   <%= render 'choices_voting_form', :choice => choice %>
 <% end %>
+<%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
