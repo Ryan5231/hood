@@ -1,5 +1,4 @@
 <%= form_tag(vote_choice_path(choice), :method => 'post') do %>
 <%= label_tag(:choice, "#{choice.content}") %>
-<%= hidden_field_tag(:choice, "#{choice.id}") %>
 <%= submit_tag("I Want This") %>
 <% end %>

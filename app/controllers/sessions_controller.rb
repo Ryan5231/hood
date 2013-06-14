@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   
   def create
-    authenticate_user(params[:user])
+    authenticate_user(params["user"])
   end
 
   def destroy
