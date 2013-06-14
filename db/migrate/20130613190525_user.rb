@@ -3,7 +3,7 @@ class User < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username, :email, :password_digest
       t.timestamps
-      
+
     end
   end
 end

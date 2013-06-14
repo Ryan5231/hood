@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20130613192704) do
 
   create_table "neighborhoods_users", :force => true do |t|
     t.integer "neighborhood_id"
-    t.integer "neighbor_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|
