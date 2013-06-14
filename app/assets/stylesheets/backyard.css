@@ -3,5 +3,6 @@
 }
 
 #splash {  
-  background-image: url('storefront.jpg');  
+  background-image: url('storefront.jpg');
+  background-size: 100% 100%;  
 }
