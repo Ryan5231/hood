@@ -1,4 +1,4 @@
-body {
+body#welcome-page {
   background-image: url('storefront.jpg');
   background-size: 100% 100%;
 }
