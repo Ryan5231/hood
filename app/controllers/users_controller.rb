@@ -9,10 +9,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @hood = Neighborhood.find(params[:neighborhood])
+    @user.neighborhoods << @hood
     if @user.save
-      redirect_to root_path
+      session[:id] = @user.id
+      redirect_to @user
     else
-      redirect_to new_user_path
+      redirect_to root_path
     end
   end
 
