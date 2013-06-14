@@ -9,9 +9,8 @@ class ChoicesController < ApplicationController
   end
 
   def vote
-    p params
-    p current_user
     @choice = Choice.find(params[:choice].to_s)
-    vote = Vote.create(choice_id: @choice.id)
+    vote = Vote.create(choice_id: @choice.id, neighbor_id: current_user.id)
+    redirect_to  @choice.listing
   end
 end
