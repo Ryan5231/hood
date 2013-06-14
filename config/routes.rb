@@ -2,7 +2,7 @@ Hood::Application.routes.draw do
 
   root :to => 'welcome#index'
   resources :users
-  resources :sessions, :only => [:create, :destroy]
+  resources :sessions, :only => [:create]
   resources :neighborhoods, :only => :show
   resources :listings, :only =>  :show
   resources :choices, :only => [:create] do
@@ -10,4 +10,6 @@ Hood::Application.routes.draw do
       post 'vote'
     end
   end
+
+  match '/sessions/destroy' => 'sessions#destroy', :as => 'logout'
 end
