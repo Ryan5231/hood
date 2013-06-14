@@ -4,5 +4,6 @@ class CreateVotes < ActiveRecord::Migration
       t.references :neighbor, :choice
       t.timestamps
     end
+    add_index :votes [:neighbor_id, :choice_id], :unique => true
   end
 end
