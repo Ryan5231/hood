@@ -10,5 +10,8 @@ class ChoicesController < ApplicationController
 
   def vote
     p params
+    p current_user
+    @choice = Choice.find(params[:choice].to_s)
+    vote = Vote.create(choice_id: @choice.id)
   end
 end
