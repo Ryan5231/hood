@@ -3,14 +3,15 @@
 <head>
   <title>Hood</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= stylesheet_link_tag "backyard", :media => "all" %>
+  <%= stylesheet_link_tag "welcome", :media => "all" %>
   <%= stylesheet_link_tag "bootstrap-responsive", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "bootstrap-responsive" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render '/layouts/nav_top' %>
-  <%= yield %>
+
+<%= yield %>
+
 </body>
 </html>
