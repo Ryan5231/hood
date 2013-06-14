@@ -1,3 +1,7 @@
-.container {  
-  top: 30px;
+.masthead {  
+  padding-top: 70px;
+}
+
+#splash {  
+  background-image: url('storefront.jpg');  
 }
