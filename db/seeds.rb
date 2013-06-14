@@ -4,12 +4,20 @@ hoods.each do |h|
   Neighborhood.find_or_create_by_name(h)
 end
 
-# Create a single listing
-title = "Charming Strip Mall"
-description =  Faker::Lorem.sentences(2).join(" ")
-address = Faker::Address.street_address
-neighborhood = Neighborhood.find(10)
-listing = Listing.create(title: title, description: description, address: address, neighborhood: neighborhood)
+# # Create a single listing
+# title = "Charming Strip Mall"
+# description =  Faker::Lorem.sentences(2).join(" ")
+# address = Faker::Address.street_address
+# neighborhood = Neighborhood.find(10)
+# listing = Listing.create(title: title, description: description, address: address, neighborhood: neighborhood)
+
+#Create choices for listing
+5.times do 
+  listing = Listing.first
+  choice = Choice.create(content: Faker::Lorem.words(5).join(" "))
+  listing.choices << choice
+  listing.save
+end
 
 
 
