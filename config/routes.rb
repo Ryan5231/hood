@@ -4,4 +4,5 @@ Hood::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:create, :destroy]
   resources :neighborhoods, :only => :show
+  resources :listings, :only =>  :show
 end
