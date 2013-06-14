@@ -9,5 +9,6 @@ class ChoicesController < ApplicationController
   end
 
   def vote
+    p params
   end
 end
