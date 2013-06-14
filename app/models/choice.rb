@@ -3,4 +3,9 @@ class Choice < ActiveRecord::Base
   belongs_to :listing
   belongs_to :neighbor, :class_name => "User"
   has_many :votes    
+
+  validates :content, :neighbor_id, :listing_id, :presence => true
+  validates :neighbor_id, :listing_id, :numericality => true
+
+
 end

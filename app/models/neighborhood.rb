@@ -3,4 +3,10 @@ class Neighborhood < ActiveRecord::Base
   has_many :listings
   has_many :realtors, :class_name => "User"
   has_many :neighbors, :class_name => "User"
+
+  validates :name, :presence => true
+
+
+
+
 end
