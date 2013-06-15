@@ -1,26 +1,22 @@
-// (function(){
-  
+$(document).ready(function() {
+  var slideNumber = 0,
+      $store = $('.stores');
 
-//   function slide(stores) {    
-//     stores.animate( { marginLeft: '-=100%' }, 'slow' ).done(slide(popPush());
-//     }
-//   }
+  function slide() {
+    $store.animate( { marginLeft: '-=100%' }, 'slow', popPush);
+  }
 
-//   function popPush() {
-    
-//     var stores = $(this);
-//     var store = stores.find('.store-pic:first');
-//     var clone = store.clone();
+  function popPush() {
+    var slide = $store.find('li.store-pic:first');
+    var slideClone = slide.clone();
 
-//     clone.appendTo(stores);
-//     store.remove();
-    
-//   }
+    slideClone.appendTo($store);
+    slide.remove();
+    $store.css('margin-left', 0);
+  }
 
-//   setInterval( function() {
-//     slide($('.stores'))
-    
-//   }, 2000 )
+  setInterval( function() {
+    slide()
+  }, 2000 )
 
-// })()
-
+});
