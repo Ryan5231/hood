@@ -1,6 +1,6 @@
 Hood::Application.routes.draw do
 
-  root :to => 'welcome#index'
+  root :to => 'welcome#temp_slider'
   resources :users
   resources :sessions, :only => [:create]
   resources :neighborhoods, :only => :show
