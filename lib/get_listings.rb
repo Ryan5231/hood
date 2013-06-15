@@ -1,0 +1,3 @@
+module GetListings
+
+end
