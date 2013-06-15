@@ -1,1 +1,15 @@
+<div class='row-fluid'>
+  <ul class="breadcrumb">
+    <li><a href="#">USA</a> <span class="divider">/</span></li>
+    <li><a href="#">California</a> <span class="divider">/</span></li>
+    <li><a href="#">SF</a> <span class="divider">/</span></li>
+    <li class="active"><%= @hood.name %></li>
+  </ul>
+  <h1><%= @hood.name %></h1>
+  <h2>Listings Available</h2>
+  <% @listings.each do |listing| %>
+  <a href="/listings/<%= listing.id %>"><%= listing.title %></a>
+  <% end %>
+</div>
+
 <div id="map-canvas" data-hood="<%=@hood.name %>" data-listings="<%= @hood.listings.to_json %>" />
