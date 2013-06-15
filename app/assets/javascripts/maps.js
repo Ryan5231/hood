@@ -1,17 +1,35 @@
 
 function initialize() {
-  var geocoder = new google.maps.Geocoder();
   var hood = $('#map-canvas').data().hood;
-  geocoder.geocode( {'address': hood}, function(results, status){
-    var lat = results[0].geometry.location.jb;
-    var lng = results[0].geometry.location.kb;
-    var mapOptions = {
-      zoom: 14,
-      center: new google.maps.LatLng(lat, lng),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+  var mapOptions = {
+    zoom: 14,
+    center: new google.maps.LatLng(0,0),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  setHoodCenter(hood, map);
+  dropPin("test", 37.776, -122.477, map);
+}
+
+function setHoodCenter(hood_name, map) {
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( {'address': hood_name}, function(results, status){
+    if (status == google.maps.GeocoderStatus.OK){
+      map.setCenter(results[0].geometry.location);
     }
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  })
+    else {
+      alert("Geocode not successful");
+    }
+  });
+}
+
+function dropPin(title, lat, lng, map) {
+  var myLatlng = new google.maps.LatLng(lat, lng);
+  var myPin = new google.maps.Marker({
+    position: myLatlng,
+    title: title
+  });
+  myPin.setMap(map);
 }
 
 function loadScript() {
