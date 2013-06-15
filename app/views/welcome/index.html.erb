@@ -1,11 +1,33 @@
 <div class="container" id="splash">
   <div class="masthead">
-    <h1> Imagine </h1>
+    <h1>Imagine.</h1>
   </div>
-  <div class='row-fluid'>
-    <div class='container'>
-      <%= render 'users/user_signin_form', :user => @user %>
-      <%= render 'users/user_form', :user => @user %>
+  <div class='container' id='store-slider'>
+    <div class='slider-container'>
+      <ul class="stores">
+        <li id="store-coffee" class='store-pic'>
+          <h1>coffee</h1>
+        </li>
+        <li id="store-pizza" class='store-pic'>
+          <h1>pizza</h1>
+        </li>
+        <li id="store-bar" class='store-pic'>
+          <h1>bar</h1>
+        </li>
+        <li id="store-yoga" class='store-pic'>
+          <h1>yoga</h1>
+        </li>
+      </ul>
     </div>
+  </div>
+  
+    <h3>The power to choose the next businesses in your neighborhood.</h3>
+    <h1>Our Backyard.</h1>
+  
+</div>
+<div class='row-fluid'>
+  <div class='container'>
+    <%= render 'users/user_signin_form', :user => @user %>
+    <%= render 'users/user_form', :user => @user %>
   </div>
 </div>

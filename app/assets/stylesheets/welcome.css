@@ -1,10 +1,9 @@
 body#welcome-page {
-  
-}
-
-#store-slider {
   background-image: url('storefront.jpg');
   background-size: 100% 100%;
+}
+#store-slider {
+  
   height: 500px;
 }
 
