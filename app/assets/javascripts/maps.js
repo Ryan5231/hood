@@ -40,7 +40,7 @@ function markListing(listing){
 }
 
 function setInfoWindow(listing, map, marker){
-  var listing_info = '<h4><a href=/listings/' + listing.id + '>' + listing.title + '</a></h4>';
+  var listing_info = '<h4>' + listing.title + '</h4><p><a href=/listings/' + listing.id + '>view this listing</a></p>';
   var infowindow = new google.maps.InfoWindow({
     content: listing_info
   });
