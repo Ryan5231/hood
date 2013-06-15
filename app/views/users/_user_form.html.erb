@@ -19,7 +19,7 @@
   </div>
   <div class="control-group">
     <%= label :neighborhood, "My Neighborhood", :class => 'control-label' %>
-    <%= select_tag(:neighborhood, options_from_collection_for_select(Neighborhood.all, :id, :name), {:class => 'controls'}) %>
+    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls'}) %>
   </div>
   <div class="control-group">
     <div class="controls">

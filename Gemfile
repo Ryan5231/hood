@@ -26,6 +26,9 @@ gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'debugger'
 end
 
 group :test do

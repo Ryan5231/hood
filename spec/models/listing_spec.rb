@@ -48,11 +48,6 @@ describe Listing do
       it "does not create a listing with incorrect neighborhood_id" do
         expect(listing.neighborhood_id).not_to eq wrong_neighborhood_id
       end
-
-
-      # it "does not create a listing with incorrect title" do
-      #   expect(listing.title).not_to eq wrong_title
-      # end
     end
   end
 end

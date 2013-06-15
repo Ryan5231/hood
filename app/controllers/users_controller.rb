@@ -34,7 +34,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    p "any chance in hell you got this far?"
     @user = User.find(params[:id])
+    p @user.id
   end
 
 end
