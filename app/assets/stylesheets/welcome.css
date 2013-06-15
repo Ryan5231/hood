@@ -2,4 +2,34 @@ body#welcome-page {
   background-image: url('storefront.jpg');
   background-size: 100% 100%;
 }
+#store-slider {
+  
+  height: 500px;
+}
+
+.slider-container {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.stores {
+  margin: 0;
+  padding: 0;
+  width: 400%;
+  height: inherit;
+}
+
+.stores li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-pic {
+  width: 25%;
+  height: inherit;
+  float: left;
+}
+
 
