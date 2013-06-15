@@ -31,7 +31,7 @@ function markListing(listing){
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode({ 'address': address }, function(results, status){
     if (status == google.maps.GeocoderStatus.OK){
-      dropPin(title, results[0].geometry.location, map);
+      dropPin(listing, results[0].geometry.location, map);
     }
     else {
       alert("Listing geocode not successful");
@@ -39,13 +39,23 @@ function markListing(listing){
   });
 }
 
+function setInfoWindow(listing, map, marker){
+  var listing_info = '<h4><a href=/listings/' + listing.id + '>' + listing.title + '</a></h4>';
+  var infowindow = new google.maps.InfoWindow({
+    content: listing_info
+  });
+  google.maps.event.addListener(marker, 'click', function(){
+    infowindow.open(map,marker);
+  });
+}
 
-function dropPin(title, location, map) {
+function dropPin(listing, location, map) {
   var myPin = new google.maps.Marker({
     position: location,
-    title: title
+    title: listing.title
   });
   myPin.setMap(map);
+  setInfoWindow(listing, map, myPin);
 }
 
 function loadScript() {
