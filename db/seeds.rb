@@ -23,7 +23,7 @@
 
 title = "Vacant Donut Shop"
 description =  Faker::Lorem.sentences(2).join(" ")
-address = Faker::Address.street_address
+address = "3029 Anza, San Francisco, CA"
 neighborhood = Neighborhood.find(27)
 listing = Listing.create(title: title, description: description, address: address, neighborhood_id: neighborhood.id, realtor_id: 3)
 
