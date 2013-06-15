@@ -1,6 +1,14 @@
-<h1><%= @listing.title %></h1>
-
-<% @listing.choices.each do |choice| %>
-  <%= render 'choices_voting_form', :choice => choice %>
-<% end %>
-<%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
+<div class='masthead'></div>
+<div class='row-fluid'>
+  <ul class="breadcrumb">
+    <li><a href="#">USA</a> <span class="divider">/</span></li>
+    <li><a href="#">California</a> <span class="divider">/</span></li>
+    <li><a href="#">SF</a> <span class="divider">/</span></li>
+    <li class="active"><%= @hood.name %></li>
+  </ul>
+  <h1><%= @listing.title %></h1>
+  <% @listing.choices.each do |choice| %>
+    <%= render 'choices_voting_form', :choice => choice %>
+  <% end %>
+  <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
+</div>
