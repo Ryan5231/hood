@@ -3,11 +3,11 @@
   <h3 class='form-signin-heading'> Log in </h3>
   <div class='control-group'>
     <%= label_tag("user_email", "Email") %>
-    <%= text_field_tag("user[:email]") %>
+    <%= text_field_tag("user[email]") %>
   </div>
   <div class='control-group'>
     <%= label_tag("user_password", "Password") %>
-    <%= text_field_tag("user[password]") %>
+    <%= password_field_tag("user[password]") %>
   </div>
   <div class='controls'>
     <%= submit_tag("Log In", :html => { :class => 'btn controls' }) %>
