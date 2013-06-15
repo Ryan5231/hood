@@ -24,6 +24,18 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem 'shoulda-matchers'
+end
+
+
 # To use ActiveModel has_secure_password
 
 # To use Jbuilder templates for JSON
