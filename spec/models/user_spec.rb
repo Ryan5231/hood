@@ -13,7 +13,7 @@ describe User do
   let(:wrong_password) {"wrong password"}
   let(:too_short_password) {"short"}
   let(:bad_user_bad_email) { User.new(username: username, email: invalid_email, password: password )}
-  let(:bad_user_bad_password) { User.new(username: username, email: email, password: wrong_password )}
+  let(:bad_user_bad_password) { User.new(username: username, email: email, password: too_short_password )}
 
 
   describe "#creation of object" do
