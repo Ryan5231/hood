@@ -1,31 +1,30 @@
-
-    <div class='span6'>
-      <%= form_for user, :html => { :class => 'form-signin', :id => 'sign-up' } do |f| %>
-      <h3 class='form-signin-heading'> Sign up </h3>
-      <div class="control-group">
-        <%= f.label :username, :class => 'control-label' %>
-        <%= f.text_field :username, :class => 'controls' %>
-      </div>
-      <div class="control-group">
-        <%= f.label :email, :class => 'control-label' %>
-        <%= f.text_field :email, :class => 'controls' %>
-      </div>
-      <div class="control-group">
-        <%= f.label :password, :class => 'control-label' %>
-        <%= f.password_field :password, :class => 'controls' %>
-      </div>
-      <div class="control-group">
-        <%= f.label :password_confirmation, :class => 'control-label' %>
-        <%= f.password_field :password_confirmation, :class => 'controls' %>
-      </div>
-      <div class="control-group">
-        <%= label :neighborhood, "My Neighborhood", :class => 'control-label' %>
-        <%= select_tag(:neighborhood, options_from_collection_for_select(Neighborhood.all, :id, :name), {:class => 'controls'}) %>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <%= f.submit :class => 'btn controls' %>
-        </div>
-      </div>
-      <% end %>
+<div class='span6'>
+  <%= form_for user, :html => { :class => 'form-signin', :id => 'sign-up' } do |f| %>
+  <h3 class='form-signin-heading'> Sign up </h3>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <%= f.text_field :username, :class => 'controls' %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <%= f.text_field :email, :class => 'controls' %>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <%= f.password_field :password, :class => 'controls' %>
+  </div>
+  <div class="control-group">
+    <%= f.label :password_confirmation, :class => 'control-label' %>
+    <%= f.password_field :password_confirmation, :class => 'controls' %>
+  </div>
+  <div class="control-group">
+    <%= label :neighborhood, "My Neighborhood", :class => 'control-label' %>
+    <%= select_tag(:neighborhood, options_from_collection_for_select(Neighborhood.all, :id, :name), {:class => 'controls'}) %>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn controls' %>
     </div>
+  </div>
+  <% end %>
+</div>
