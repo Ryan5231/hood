@@ -1,5 +1,12 @@
+.navbar-inner {
+  background-image: none;
+  background-color: #01A611;
+}
+
+
 .masthead {  
-  padding-top: 70px;
+
+  padding-top: 45px;
 }
 
 html { height: 100% }
@@ -8,10 +15,13 @@ body {
 	clear:both;
 	height: 100%; 
 	margin: 0;
-	padding: 0 
+	padding: 0;
+  
+
 }
 
 #map-canvas { 
+  float: right;
 	height: 500px; 
 	width: 500px;
   border: 1px solid #ccc;
