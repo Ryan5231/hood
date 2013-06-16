@@ -51,14 +51,12 @@ describe "sessions" do
                          email: 'allen@aol.com',
                          password: 'password',)
       user.neighborhoods << hood
-      p user.neighborhoods[0]
       visit root_path
       within ('#sign-in') do
         fill_in "user_email", :with => "allen@aol.com"
         fill_in "user_password", :with => "password"
       end
       click_button "Log In"
-      sleep 2
       page.should have_content "Profile"
     end
   end

@@ -4,7 +4,7 @@ Hood::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:create]
   resources :neighborhoods, :only => :show
-  resources :listings, :only =>  :show
+  resources :listings
   resources :choices, :only => [:create] do
     member do
       post 'vote'

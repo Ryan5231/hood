@@ -29,6 +29,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'debugger'
+  gem 'better_errors'
 end
 
 group :test do

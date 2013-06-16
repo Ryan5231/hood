@@ -18,7 +18,14 @@
     <%= f.password_field :password_confirmation, :class => 'controls' %>
   </div>
   <div class="control-group">
-    <%= label :neighborhood, "My Neighborhood", :class => 'control-label' %>
+    <%= f.label :type, "Are you a Realtor?", :class => 'control-label' %>
+    <%= f.radio_button :type, 'Realtor' %>
+    <%= f.label :type, 'Yes', :value => 'Realtor' %>
+    <%= f.radio_button :type, 'Neighbor' %>
+    <%= f.label :type, 'No', :value => 'Neighbor' %>
+  </div>
+  <div class="control-group">
+    <%= f.label :neighborhood, "My Neighborhood", :class => 'control-label' %>
     <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls'}) %>
   </div>
   <div class="control-group">
