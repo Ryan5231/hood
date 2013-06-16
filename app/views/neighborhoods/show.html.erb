@@ -1,11 +1,6 @@
 <div class='masthead'></div>
 <div class='row-fluid'>
-  <ul class="breadcrumb">
-    <li><a href="#">USA</a> <span class="divider">/</span></li>
-    <li><a href="#">California</a> <span class="divider">/</span></li>
-    <li><a href="#">SF</a> <span class="divider">/</span></li>
-    <li class="active"><%= @hood.name %></li>
-  </ul>
+  <%= render 'layouts/breadcrumb' %>
   <div class='span6'>
     <h1><%= @hood.name %></h1>
     <h2>Listings Available</h2>
