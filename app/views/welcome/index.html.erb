@@ -18,8 +18,13 @@
       </ul>
     </div>
   </div>
-    <h3>The power to choose the next businesses in your neighborhood.</h3>
+    <h3>The power to choose the next business in your neighborhood.</h3>
     <h1>Our Backyard.</h1>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
 </div>
 <div class='row-fluid'>
   <div class='container'>

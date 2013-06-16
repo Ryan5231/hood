@@ -1,10 +1,9 @@
 class WelcomeController < ApplicationController
+
   def index
+    @neighborhoods = Neighborhood.all
     @user = User.new
     render :layout => 'welcome'
   end
 
-  def temp_slider
-    render :temp_slider
-  end
 end

@@ -4,8 +4,8 @@ require "rspec"
 describe Neighborhood do
 
   neighborhood = FactoryGirl.build(:neighborhood)
-  let(:neighborhood_name) {'city'}
-  let(:wrong_neighborhood) {'not city'}
+  let(:neighborhood_name) {'Castro'}
+  let(:wrong_neighborhood) {'not Castro'}
 
   describe "#creation of object" do
     context "with valid input" do
