@@ -14,7 +14,7 @@ hoods.each do |h|
   Neighborhood.find_or_create_by_name(h)
 end
 
-# Create a single listing
+# Create a listing
 # title = "Charming Strip Mall"
 # description =  Faker::Lorem.sentences(2).join(" ")
 # address = Faker::Address.street_address

@@ -1,5 +1,5 @@
 
-<div class='masthead'></div>
+
 <div class='row-fluid'>
   <%= render 'layouts/breadcrumb' %>
   <div class='span6'>
@@ -9,4 +9,6 @@
     <a href="/listings/<%= listing.id %>"><%= listing.title %></a>
     <% end %>
   </div>
+</div>
+
 <div id="map-canvas" data-hood="<%=@hood.name %>" data-listings="<%= @hood.listings.to_json %>" />
