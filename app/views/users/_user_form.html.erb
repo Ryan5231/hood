@@ -19,10 +19,10 @@
   </div>
   <div class="control-group">
     <%= f.label :type, "Are you a Realtor?", :class => 'control-label' %>
-    <%= f.radio_button :type, 'Realtor' %>
-    <%= f.label :type, 'Yes', :value => 'Realtor' %>
-    <%= f.radio_button :type, 'Neighbor' %>
-    <%= f.label :type, 'No', :value => 'Neighbor' %>
+    <%= f.radio_button :type, 'Realtor', {:required => true, :class =>"radio"} %>
+    <%= f.label :type, 'Yes', :value => 'Realtor', :class=>"label" %>
+    <%= f.radio_button :type, 'Neighbor', :required => true, :class =>"radio" %>
+    <%= f.label :type, 'No', :value => 'Neighbor', :class=>"label" %>
   </div>
   <div class="control-group">
     <%= f.label :neighborhood, "My Neighborhood", :class => 'control-label' %>
