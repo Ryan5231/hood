@@ -1,29 +1,57 @@
+html { 
+  height: 100% 
+}
+
+body { 
+  clear:both;
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body#application {
+  background-color: #F7F9FA;
+}
+
+.masthead {  
+  padding-top: 70px;
+}
+
+
 .navbar-inner {
   background-image: none;
   background-color: #01A611;
 }
 
-
-.masthead {  
-
-  padding-top: 45px;
+#profile-pic {
+  background-image: url('placeholder.png');
+  height: 200px;
+  width: 100%;
 }
 
-html { height: 100% }
+.profile {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
 
-body { 
-	clear:both;
-	height: 100%; 
-	margin: 0;
-	padding: 0;
-  
 
 }
+
+
 
 #map-canvas { 
   float: right;
-	height: 500px; 
-	width: 500px;
+  height: 500px; 
+  width: 500px;
   border: 1px solid #ccc;
   padding: 19px 29px 29px;
   margin: 0 auto 20px;
