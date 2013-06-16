@@ -1,7 +1,7 @@
 FactoryGirl.define do
    
    factory :neighborhood do
-   name 'city'
+   name 'Castro'
   end
 
   factory :user do
