@@ -12,12 +12,9 @@ class ListingsController < ApplicationController
 
   def create
     @hood = Neighborhood.find(params[:neighborhood])
-    @listing = Listing.new(title: params[:listing][:title],
-                           description: params[:listing][:description],
-                           address: params[:listing][:address],
-                           image: params[:listing][:image],
-                           neighborhood_id: @hood.id,
-                           realtor_id: current_user.id)
+    @listing = Listing.new(params[:listing])
+    @listing.neighborhood = @hood
+    @listing.realtor_id = current_user.id
     if @listing.save
       redirect_to @listing
     else
@@ -28,14 +25,14 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    @neighborhoods = Neighborhood.all
     @listing = Listing.find(params[:id])
   end
 
   def update
     @listing = Listing.find(params[:id])
-    @listing.update_attributes(title: params[:listing][:title],
-                               description: params[:listing][:description],
-                               address: params[:listing][:address])
+    p params
+    @listing.update_attributes(params[:listing])
     redirect_to listing_path(@listing)
   end
 

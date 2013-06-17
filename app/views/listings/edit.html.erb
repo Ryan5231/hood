@@ -13,7 +13,10 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
     <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address %><br />
+    <%= image_tag @listing.image_url(:main) unless @listing.image.blank? %>
+    <%= f.label :image, "Update Photo" %>
+    <%= f.file_field :image  %>
     <%=f.hidden_field(:realtor_id, :value => current_user.id) %><br><br>
     <%= f.submit "Edit Listing" %>
   <% end %>
