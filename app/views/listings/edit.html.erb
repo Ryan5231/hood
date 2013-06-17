@@ -1,0 +1,22 @@
+<div class='listing-form'>
+<% if current_user.type == 'Realtor'  %>
+
+
+<% if flash[:listing_error] %>
+<%= flash[:listing_error] %>
+<% end %>
+
+
+  <%= form_for (@listing) do |f|%>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%=f.hidden_field(:realtor_id, :value => current_user.id) %><br><br>
+    <%= f.submit "Edit Listing" %>
+  <% end %>
+
+<% end %>
+</div>

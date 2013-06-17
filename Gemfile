@@ -23,12 +23,14 @@ end
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'debugger'
+  gem 'better_errors'
 end
 
 group :test do

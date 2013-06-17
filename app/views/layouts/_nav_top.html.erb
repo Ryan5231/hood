@@ -3,10 +3,12 @@
     <div class="navbar-inner">
       <div class="container">
         <ul class="nav">
-          <li><%= link_to "Home", root_path %></li>
             <% if current_user %>
-              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
               <li><%= link_to "My Neighborhood", neighborhood_path(current_user.neighborhoods[0]) %></li>
+              <% if current_user.type == 'Realtor' %>
+                    <li><%= link_to "Create a Listing", new_listing_path %></li>
+              <% end %>
               <li><%= link_to "Logout", logout_path %></li>
             <% else %>
               <li><%= link_to "Login", root_path %></li>

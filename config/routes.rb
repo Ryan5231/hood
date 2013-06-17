@@ -4,7 +4,7 @@ Hood::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:create]
   resources :neighborhoods, :only => :show
-  resources :listings, :only =>  :show
+  resources :listings
   resources :choices, :only => [:create] do
     member do
       post 'vote'
@@ -12,4 +12,6 @@ Hood::Application.routes.draw do
   end
 
   match '/sessions/destroy' => 'sessions#destroy', :as => 'logout'
+  match '/listings/:id/close' => 'listings#close', :as => 'close_listing'
+  match '/listings/:id/reopoen' => 'listings#reopen', :as => 'reopen_listing'
 end

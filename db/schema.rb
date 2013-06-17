@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613192704) do
+ActiveRecord::Schema.define(:version => 20130617003933) do
 
   create_table "choices", :force => true do |t|
     t.string   "content"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(:version => 20130613192704) do
     t.string   "title"
     t.string   "description"
     t.string   "address"
+    t.string   "status",          :default => "active"
     t.integer  "neighborhood_id"
     t.integer  "realtor_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.string   "image"
   end
 
   create_table "neighborhoods", :force => true do |t|
@@ -46,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130613192704) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "type",            :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

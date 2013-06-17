@@ -14,18 +14,22 @@ hoods.each do |h|
   Neighborhood.find_or_create_by_name(h)
 end
 
-# Create a single listing
+# Create a listing
 # title = "Charming Strip Mall"
 # description =  Faker::Lorem.sentences(2).join(" ")
 # address = Faker::Address.street_address
 # neighborhood = Neighborhood.find(10)
 # listing = Listing.create(title: title, description: description, address: address, neighborhood_id: 1, realtor_id: 3)
 
+realtor = Realtor.create(username: 'ken', email: 'ken@aol.com', password: 'password')
+
+neighbor = Neighbor.create(username: 'nate', email: 'nate@aol.com', password: 'password')
+
 title = "Vacant Donut Shop"
 description =  Faker::Lorem.sentences(2).join(" ")
 address = "3029 Anza, San Francisco, CA"
 neighborhood = Neighborhood.find(27)
-listing = Listing.create(title: title, description: description, address: address, neighborhood_id: neighborhood.id, realtor_id: 3)
+listing = Listing.create(title: title, description: description, address: address, neighborhood_id: neighborhood.id, realtor_id: 1)
 
 
 #Create choices for listing
@@ -35,6 +39,22 @@ listing = Listing.create(title: title, description: description, address: addres
   listing.choices << choice
   listing.save
 end
+
+
+neighbor.neighborhoods << neighborhood
+realtor.neighborhoods << neighborhood
+realtor.listings << listing
+Choice.create(content: 'yoga studio', neighbor_id: 2, listing_id: 1)
+
+vote = Vote.create(neighbor_id: 1, choice_id: 1)
+
+neighbor.votes << vote
+neighbor.save
+realtor.save
+
+
+
+
 
 
 

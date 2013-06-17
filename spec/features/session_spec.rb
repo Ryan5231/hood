@@ -21,6 +21,7 @@ describe "sessions" do
         fill_in "user_email", :with => email
         fill_in "user_password", :with => password
         fill_in "user_password_confirmation", :with => password_confirmation
+        choose("Yes")
         select(option, :from => "neighborhood")
       end
       click_button "Create User"
@@ -37,6 +38,7 @@ describe "sessions" do
         fill_in "Email", :with => email
         fill_in "Password", :with => password
         fill_in "Password confirmation", :with => bad_conf
+        choose("Yes")
         select(option, :from => "neighborhood")
       end
       click_button "Create User"
@@ -51,14 +53,12 @@ describe "sessions" do
                          email: 'allen@aol.com',
                          password: 'password',)
       user.neighborhoods << hood
-      p user.neighborhoods[0]
       visit root_path
       within ('#sign-in') do
         fill_in "user_email", :with => "allen@aol.com"
         fill_in "user_password", :with => "password"
       end
       click_button "Log In"
-      sleep 2
       page.should have_content "Profile"
     end
   end
