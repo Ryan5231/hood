@@ -22,13 +22,18 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @neighborhoods = Neighborhood.all
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to @user
+    user = User.find(params[:id])
+    @hood = Neighborhood.find(params[:neighborhood])
+    user.neighborhoods.destroy_all
+    user.neighborhoods << @hood
+    if user.update_attributes(params[:neighbor])
+      redirect_to user
     else
+      p "yes im here ______________________________"
       redirect_to edit_user_path(@user)
     end
   end

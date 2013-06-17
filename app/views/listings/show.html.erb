@@ -14,13 +14,12 @@
   <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
 </div>
 
-<h2><%= link_to 'Create Post', new_post_path(@listing) %><h2>
+<h2><%= link_to 'Create Comment', new_comment_path(@listing) %><h2>
 
-<% @listing.posts.each do|post| %>
-    <h3><%= post.title %></h3><br>
-    <%= post.content %><br>
-      <% post.comments.each do |comment| %>
-        <h4><%= comment.title %></h4><br>
-        <%= comment.content %>
-      <% end %>
-  <% end %>
+
+
+  <% @listing.comments.each do|comment| %>
+      <h3 class='comment'><%= comment.content %></h3><br>
+    <% end %>
+
+
