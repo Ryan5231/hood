@@ -1,2 +1,26 @@
 <h1> Edit Your Info</h1>
 
+<div class='user-edit-form'>
+<% if current_user.type == 'Neighbor'  %>
+
+
+<% if flash[:edit_neighbor_error] %>
+<%= flash[:edit_neighbor_error] %>
+<% end %>
+
+
+  <%= form_for (@user) do |f|%>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :type, "Are you a Realtor?", :class => 'control-label' %>
+    <%= f.radio_button :type, 'Realtor', {:required => true, :class =>"radio"} %>
+    <%= f.label :type, 'Yes', :value => 'Realtor', :class=>"label" %>
+    <%= f.radio_button :type, 'Neighbor', :required => true, :class =>"radio" %>
+    <%= f.label :type, 'No', :value => 'Neighbor', :class=>"label" %><br><br>
+    <%= f.submit "Edit Profile" %>
+  <% end %>
+
+<% end %>
+</div>

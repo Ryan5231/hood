@@ -25,12 +25,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to @user
-    else
-      redirect_to edit_user_path(@user)
-    end
+    user = User.find(params[:id])
+    p user
+    p "here bro????????????????????"
+    user.update_attributes(username: 'ran', email: 'ran@aol.com')
+      redirect_to user
+    # else
+    #   p "yes im here ______________________________"
+    #   redirect_to edit_user_path(@user)
+    # end
   end
 
   def show
