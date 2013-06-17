@@ -18,7 +18,7 @@
     <%= f.file_field :image %>
     <%=f.hidden_field(:realtor_id, :value => current_user.id) %>
     <%= f.label :neighborhood, "Neighborhood", :class => 'control-label' %>
-    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls'}) %>
+    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls', :multiple => true}) %><br><br>
     <p class='alt_hood_find'> OR </p>
     <%= label_tag :find_hood, "Find neighborhood based on address", :class => 'alt_hood_find' %>
     <%= button_tag "Find my hood", :id => 'find_hood', :type => 'button' %><br /><br />
