@@ -3,7 +3,7 @@ class ChoicesController < ApplicationController
     @choice = Choice.new(params[:choice])
     @choice.neighbor = current_user
     if @choice.save
-      redirect_to @choice.listing
+      render :json => {:choice => @choice, :path => vote_choice_path(@choice)}
     else
       # do something here
     end
