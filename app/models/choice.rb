@@ -7,5 +7,9 @@ class Choice < ActiveRecord::Base
   validates :content, :neighbor_id, :listing_id, :presence => true
   validates :neighbor_id, :listing_id, :numericality => true
 
+  def vote_count
+  	self.votes.size
+  end
+
 
 end

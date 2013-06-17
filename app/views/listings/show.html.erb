@@ -2,7 +2,7 @@
 <div class='row-fluid'>
   <%= render 'layouts/breadcrumb' %>
   <h1><%= @listing.title %></h1>
-  <%= image_tag @listing.image_url(:main).to_s %>
+  <%= image_tag @listing.image_url(:main).to_s if @listing.image_url%>
   <% @listing.choices.each do |choice| %>
     <%= render 'choices_voting_form', :choice => choice %>
   <% end %>
