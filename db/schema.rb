@@ -57,4 +57,6 @@ ActiveRecord::Schema.define(:version => 20130613192704) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "votes", ["neighbor_id", "choice_id"], :name => "index_votes_on_neighbor_id_and_choice_id", :unique => true
+
 end
