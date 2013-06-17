@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker'
 gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
