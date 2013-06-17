@@ -20,7 +20,7 @@
     <%= f.radio_button :type, 'Neighbor', :required => true, :class =>"radio" %>
     <%= f.label :type, 'No', :value => 'Neighbor', :class=>"label" %><br><br>
     <%= f.label :neighborhood, "My Neighborhood", :class => 'control-label' %>
-    <%= f.select :neighborhoods, options_from_collection_for_select(@neighborhoods, :id, :name, :selected => @user.neighborhoods.first.id), {:class => 'controls'} %><br><br>
+    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name, :selected => @user.neighborhoods.map{|hood|hood.id}), :class => 'controls neighborhood-menu', :multiple => true) %>
     <%= f.submit "Edit Profile" %>
   <% end %>
 

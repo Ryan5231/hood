@@ -27,8 +27,9 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    p user
-    p "here bro????????????????????"
+    @hood = Neighborhood.find(params[:neighborhood])
+    user.neighborhoods.destroy_all
+    user.neighborhoods << @hood
     if user.update_attributes(params[:neighbor])
       redirect_to user
     else
