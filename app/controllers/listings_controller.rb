@@ -11,7 +11,11 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @hood = Neighborhood.find(params[:neighborhood])
+    if params[:neighborhood]
+      @hood = Neighborhood.find(params[:neighborhood])
+    else
+      @hood = Neighborhood.find_or_create_by_name(params[:neighborhood_name])
+    end
     @listing = Listing.new(params[:listing])
     @listing.neighborhood = @hood
     @listing.realtor_id = current_user.id
