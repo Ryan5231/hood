@@ -14,4 +14,6 @@ Hood::Application.routes.draw do
   match '/sessions/destroy' => 'sessions#destroy', :as => 'logout'
   match '/listings/:id/close' => 'listings#close', :as => 'close_listing'
   match '/listings/:id/reopoen' => 'listings#reopen', :as => 'reopen_listing'
+  match '/listings/:id/post/new' => 'posts#new', :as => 'new_post'
+  match '/listings/:id/post/create' => 'posts#create', :as => 'posts'
 end
