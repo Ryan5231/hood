@@ -1,9 +1,11 @@
+(function() {
+
 $(document).ready(function() {
   var slideNumber = 0,
       $store = $('.stores');
 
   function slide() {
-    $store.animate( { marginLeft: '-=100%' }, 'slow', popPush);
+    $store.animate( { marginLeft: '-=100%' }, 1000, popPush);
   }
 
   function popPush() {
@@ -16,7 +18,10 @@ $(document).ready(function() {
   }
 
   setInterval( function() {
+    console.log('hey')
     slide()
-  }, 2000 )
+  }, 6000 )
 
 });
+
+})()
