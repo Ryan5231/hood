@@ -15,6 +15,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(title: params[:listing][:title],
                            description: params[:listing][:description],
                            address: params[:listing][:address],
+                           image: params[:listing][:image],
                            neighborhood_id: @hood.id,
                            realtor_id: current_user.id)
     if @listing.save

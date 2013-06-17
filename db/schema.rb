@@ -28,14 +28,9 @@ ActiveRecord::Schema.define(:version => 20130617003933) do
     t.string   "status",          :default => "active"
     t.integer  "neighborhood_id"
     t.integer  "realtor_id"
-<<<<<<< HEAD
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "image"
-=======
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
->>>>>>> master
+    t.string   "image"
   end
 
   create_table "neighborhoods", :force => true do |t|
@@ -53,10 +48,7 @@ ActiveRecord::Schema.define(:version => 20130617003933) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-<<<<<<< HEAD
-=======
     t.string   "type",            :null => false
->>>>>>> master
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

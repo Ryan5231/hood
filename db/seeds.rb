@@ -49,6 +49,8 @@ Choice.create(content: 'yoga studio', neighbor_id: 2, listing_id: 1)
 vote = Vote.create(neighbor_id: 1, choice_id: 1)
 
 neighbor.votes << vote
+neighbor.save
+realtor.save
 
 
 
