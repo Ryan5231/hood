@@ -1,10 +1,19 @@
 <div class='row-fluid'>
   <div class='container'>
-    <div class='masthead'><h1>Neighbor Profile</h1></div>
+    <% if @user.type == 'Neighbor' %>
+      <div class='masthead'><h1>Neighbor Profile</h1></div>
     <div class='span6 profile'>
       <div class="well well-small">
         Neighbor details
       </div>
+    <% else %>
+      <div class='masthead'><h1>Realtor Profile</h1></div>
+    <div class='span6 profile'>
+      <div class="well well-small">
+        Realtor details
+      </div>
+    <% end %>
+
       <h1><%= @user.username %></h1>
       <p>Email: <%= @user.email %></p>
     </div>
@@ -25,3 +34,24 @@
     </div>
   </div>
 </div>
+
+<h2> <%= link_to "Edit Profile", edit_user_path(@user)%> </h2>
+
+<% if @user.type == 'Realtor' %>
+  <h2>Open Listings</h2>
+    <% @user.listings.each do |listing| %>
+      <% if listing.status == 'active' %>
+        <h2><%= link_to "#{listing.title}", listing_path(listing)  %></h2>
+        <h4><%= link_to "Edit Listing", edit_listing_path(listing) %></h4>
+        <h4><%= link_to "Close Listing", close_listing_path(listing) %></h4>
+      <% end %>
+    <% end %>
+
+  <h2>Closed Listings</h2>
+    <% @user.listings.each do |listing| %>
+      <% if listing.status == 'inactive' %>
+        <h2><%= link_to "#{listing.title}", listing_path(listing)  %></h2>
+        <h4><%= link_to "Reopen Listing", reopen_listing_path(listing) %></h4>
+      <% end %>
+    <% end %>
+<% end %>
