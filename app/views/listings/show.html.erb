@@ -2,10 +2,15 @@
 <div class='row-fluid'>
   <%= render 'layouts/breadcrumb' %>
   <h1><%= @listing.title %></h1>
-  <%= image_tag @listing.image_url.to_s %>
-  <% @listing.choices.each do |choice| %>
-    <%= render 'choices_voting_form', :choice => choice %>
-  <% end %>
+  <%= image_tag @listing.image_url(:main).to_s if @listing.image_url%>
+  <div class="hidden choice_template">
+    <%= render 'choices_voting_template' %>
+  </div>
+  <div class='choices'>
+    <% @listing.choices.each do |choice| %>
+      <%= render 'choices_voting_form', :choice => choice %>
+    <% end %>
+  </div>
   <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
 </div>
 
@@ -16,4 +21,5 @@
   <% @listing.comments.each do|comment| %>
       <h3 class='comment'><%= comment.content %></h3><br>
     <% end %>
+
 

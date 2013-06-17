@@ -58,11 +58,17 @@ function dropPin(listing, location, map) {
   setInfoWindow(listing, map, myPin);
 }
 
-function loadScript() {
+function loadMapScript() {
   var script = document.createElement("script");
   script.type = "text/javascript";
   script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDptMR6xnHBRufnYLWlnEWrZs75Zt37WTo&sensor=false&callback=initialize";
-  document.body.appendChild(script);
+  document.head.appendChild(script);
 }
 
-window.onload = loadScript;
+function conditionalLoad() {
+  if ( $('#map-canvas').length != 0) {
+    loadMapScript();
+  }
+}
+
+window.onload = conditionalLoad;
