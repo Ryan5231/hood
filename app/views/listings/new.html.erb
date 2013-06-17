@@ -18,7 +18,7 @@
     <%= f.file_field :image %>
     <%=f.hidden_field(:realtor_id, :value => current_user.id) %>
     <%= f.label :neighborhood, "Neighborhood", :class => 'control-label' %>
-    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls', :multiple => true}) %><br><br>
+    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls'}) %><br><br>
     <%= f.submit "Create Listing" %>
   <% end %>
 
