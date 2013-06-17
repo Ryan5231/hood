@@ -7,17 +7,15 @@
 <% end %>
 
 
-  <%= form_for @listing do |f|%>
+  <%= form_for (@listing) do |f|%>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <%= f.label :description %>
     <%= f.text_field :description %>
     <%= f.label :address %>
     <%= f.text_field :address %>
-    <%=f.hidden_field(:realtor_id, :value => current_user.id) %>
-    <%= f.label :neighborhood, "Neighborhood", :class => 'control-label' %>
-    <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls'}) %><br><br>
-    <%= f.submit "Create Listing" %>
+    <%=f.hidden_field(:realtor_id, :value => current_user.id) %><br><br>
+    <%= f.submit "Edit Listing" %>
   <% end %>
 
 <% end %>

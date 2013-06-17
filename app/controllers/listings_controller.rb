@@ -26,4 +26,30 @@ class ListingsController < ApplicationController
 
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update_attributes(title: params[:listing][:title],
+                               description: params[:listing][:description],
+                               address: params[:listing][:address])
+    redirect_to listing_path(@listing)
+  end
+
+  def close
+    @listing = Listing.find(params[:id])
+    @listing.status = 'inactive'
+    @listing.save
+    redirect_to user_path(@listing.realtor)
+  end
+
+  def reopen
+    @listing = Listing.find(params[:id])
+    @listing.status = 'active'
+    @listing.save
+    redirect_to listing_path(@listing)
+  end
+
 end

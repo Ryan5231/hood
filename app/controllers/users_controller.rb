@@ -34,9 +34,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    p "what about now?"
-    @user = User.find(params[:id])
-    p @user
+    if current_user
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
 end
