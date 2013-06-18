@@ -1,13 +1,12 @@
   <div class="welcome-nav">
     <h1>Imagine.</h1>
     <ul id="sessions">
-      <li><%= link_to "Log In", '/log_in' %> </li>
-      <li><%= link_to "Sign Up", '/sign_up'%> </li>
+      <li><%= link_to "Log In", # %></li>
+      <li><%= link_to "Sign Up", # %></li>
     </ul>
   </div>
-
 <div class="container" id="splash">
-<div class='container' id='store-slider'>
+<!--   <div class='container' id='store-slider'>
     <div class='slider-container'>
       <ul class="stores">
         <li id="store-coffee" class='store-pic'>
@@ -23,9 +22,9 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
-<% if current_user %>
+<!--   <% if current_user %>
     <h3 id='welcome-hood'><%= link_to 'Take me to my Neighborhood', neighborhood_path(current_user.neighborhoods.first.id)%></h3>
   <% end %>
 
@@ -43,7 +42,5 @@
     <%= render 'users/user_signin_form', :user => @user %>
     <%= render 'users/user_form', :user => @user %>
   </div>
-</div> 
-<% end %>
-
-
+</div> -->
+<!-- <% end %> -->

@@ -3,7 +3,7 @@
   <div class='container'>
     <% if @user.type == 'Neighbor' %>
       <div class='masthead'><h1>Neighbor Profile</h1>
-        <%= button_to "Edit Profile", edit_user_path(@user), {:class => 'btn' } %>
+        <%= link_to "Edit Profile", edit_user_path(@user) %>
       </div>
       <div class='span6 profile'>
       <div class="well well-small">
@@ -11,14 +11,14 @@
       </div>
     <% else %>
       <div class='masthead'><h1>Realtor Profile</h1>
-        <%= button_to "Edit Profile", edit_user_path(@user), {:class => 'btn' } %>
+        <%= button_to "Edit Profile", :action => "edit" %>
       </div>
       <div class='span6 profile'>
       <div class="well well-small">
         Realtor details
       </div>
     <% end %>
-    
+
 
 
       <h1><%= @user.username %></h1>
