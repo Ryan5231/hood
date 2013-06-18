@@ -1,26 +1,10 @@
 
 .store-pic {
-  background-size: 100%;
-  height: 500px;
+  
+  height: 100%;
+  width: 100%;
+  background-repeat: none;
 }
-
-
-#store-pizza {
-  background-image: url('storefront-pizza.gif');
-}
-
-#store-drugstore {
-  background-image: url('storefront-drugstore.gif');
-}
-
-#store-yoga {
-  background-image: url('storefront-yoga.gif');
-}
-
-#store-coffee {
-  background-image: url('storefront-coffee.gif');
-}
-
 
 #store-slider {
   background-image: url('storefront.jpg');
