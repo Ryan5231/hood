@@ -32,7 +32,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'debugger'
   gem 'better_errors'
-  gem 'cucumber-rails'
 end
 
 group :test do
@@ -41,6 +40,7 @@ group :test do
   gem "guard-rspec"
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'cucumber-rails', :require => false
 end
 
 
