@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617135933) do
+ActiveRecord::Schema.define(:version => 20130617135942) do
 
   create_table "choices", :force => true do |t|
     t.string   "content"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(:version => 20130617135933) do
   create_table "neighborhoods_users", :force => true do |t|
     t.integer "neighborhood_id"
     t.integer "user_id"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "listing_id"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

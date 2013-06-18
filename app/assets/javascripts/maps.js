@@ -3,7 +3,7 @@ function initialize() {
   var listings = $('#map-canvas').data().listings;
   var hood = $('#map-canvas').data().hood;
   var mapOptions = {
-    zoom: 14,
+    zoom: 15,
     center: new google.maps.LatLng(0,0),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
@@ -13,8 +13,11 @@ function initialize() {
 }
 
 function setHoodCenter(hood_name, map) {
+  var sw = new google.maps.LatLng(37.6,-122.5);
+  var ne = new google.maps.LatLng(37.83, -122.38);
+  var bounds = new google.maps.LatLngBounds(sw, ne);
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( {'address': hood_name}, function(results, status){
+  geocoder.geocode( {'address': hood_name, 'bounds': bounds}, function(results, status){
     if (status == google.maps.GeocoderStatus.OK){
       map.setCenter(results[0].geometry.location);
     }
