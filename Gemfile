@@ -39,6 +39,8 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
   gem 'shoulda-matchers'
+  gem 'launchy'
+  gem 'cucumber-rails', :require => false
 end
 
 
