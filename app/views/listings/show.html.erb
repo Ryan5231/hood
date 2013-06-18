@@ -7,7 +7,7 @@
         <h3 class='subhead'>the shop next door</h3>
         <h1><%= @listing.title %></h1>
         <h3><%= @listing.address %></h3>
-        
+
       </div>
     </div>
   </div>
@@ -29,11 +29,11 @@
         <div class="hidden choice_template">
           <%= render 'choices_voting_template' %>
         </div>
-        <div class='choices'>
+        
           <% @listing.choices.each do |choice| %>
             <%= render 'choices_voting_form', :choice => choice %>
           <% end %>
-        </div>
+        
         <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
       </div>
     </div>  

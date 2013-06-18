@@ -1,11 +1,15 @@
+.choice-listing {
+  background-color: yellow
+}
+
 .choice-text {
-  float:left;
+  background-color: yellow
 }
 
 .choice-vote {
-  float:left;
+  background-color: yellow
 }
 
 .choice-vote-count {
-  float:left;
+  background-color: yellow
 }

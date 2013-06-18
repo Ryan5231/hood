@@ -1,4 +1,4 @@
-<div class='choice'>
+<div class='choice-listing'>
   <div class='row'>
     <div class='span6'>
       <div class='choice-text'>
@@ -6,11 +6,15 @@
         <%= label_tag(:choice, "content") %>
       </div>
     </div>
-    <div class='choice-vote-count'>
-     <%= label_tag(:choice, "Votes:", :class => 'vote_count') %>
+    <div class='span3'>
+      <div class='choice-vote-count'>
+       <%= label_tag(:choice, "Votes:", :class => 'vote_count') %>
+      </div>
     </div>
-    <div class='choice-vote'>
-      <%= submit_tag("I Want This") %>
+    <div class='span3'>
+      <div class='choice-vote'>
+        <%= submit_tag("I Want This") %>
+      </div>
     </div>
   <% end %>
   </div>
