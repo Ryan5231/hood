@@ -35,15 +35,26 @@
     </div>
     <div class='span6 profile'>
       <div class="well well-small">
-        My pics
+        Profile Pic
       </div>
-      <div id='profile-pic'></div>
-      <div class='add_user_image'>
-        <%= form_tag(add_user_photo_path(current_user)) do %>
-          <%= label_tag :image, "Add Photo" %>
-          <%= file_field_tag :image %>
+        <%= image_tag @user.image_url(:thumb).to_s if @user.image_url%>
+        <% if @user.image_url %>
+        <div class='update_user_image'>
+            <%= form_for @user, :url => add_user_photo_path(@user) do |f| %>
+              <%= f.label :image, "Change Your Photo" %>
+              <%= f.file_field :image %>
+              <%= f.submit "Update Photo" %>
+            <% end %>
+          </div>
+        <% else %>
+          <div class='add_user_image'>
+            <%= form_for @user, :url => add_user_photo_path(@user) do |f| %>
+              <%= f.label :image, "Upload a Photo" %>
+              <%= f.file_field :image %>
+              <%= f.submit "Add Photo" %>
+            <% end %>
+          </div>
         <% end %>
-      </div>
     </div>
   </div>
 
