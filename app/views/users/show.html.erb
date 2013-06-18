@@ -34,6 +34,12 @@
         My pics
       </div>
       <div id='profile-pic'></div>
+      <div class='add_user_image'>
+        <%= form_tag(add_user_photo_path(current_user)) do %>
+          <%= label_tag :image, "Add Photo" %>
+          <%= file_field_tag :image %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
