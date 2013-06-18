@@ -1,7 +1,17 @@
 <div class='choice'>
-	<%= form_tag('temp_path', :class => 'choice_vote', :remote => true) do %>
-	<%= label_tag(:choice, "content") %>
-	<%= label_tag(:choice, "Votes:", :class => 'vote_count') %>
-	<%= submit_tag("I Want This") %>
-	<% end %>
+  <div class='row'>
+    <div class='span6'>
+      <div class='choice-text'>
+        <%= form_tag('temp_path', :class => 'choice_vote', :remote => true) do %>
+        <%= label_tag(:choice, "content") %>
+      </div>
+    </div>
+    <div class='choice-vote-count'>
+     <%= label_tag(:choice, "Votes:", :class => 'vote_count') %>
+    </div>
+    <div class='choice-vote'>
+      <%= submit_tag("I Want This") %>
+    </div>
+  <% end %>
+  </div>
 </div>
