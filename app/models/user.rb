@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates :username, :email, :presence => true
   validates :password, :presence => true, :on => :create
   validates :username, :email, :uniqueness => true
-  validates :email, :format => { :with => /.*[@].*[\.].*/, :message => "must have @ and a (.)"}
+  validates :email, :format => { :with => /.*[@].*[\.].*/}
   validates :password, :length => { :in => 6..20 }, :on => :create
 
 end

@@ -26,9 +26,7 @@
     <h3>The power to choose the next business in your neighborhood.</h3>
     <h1>Our Backyard.</h1>
 
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+
 </div>
 
 <% if !current_user %>
@@ -37,7 +35,7 @@
     <%= render 'users/user_signin_form', :user => @user %>
     <%= render 'users/user_form', :user => @user %>
   </div>
-</div> 
+</div>
 <% end %>
 
 

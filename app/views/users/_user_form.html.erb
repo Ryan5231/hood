@@ -3,13 +3,13 @@
   <%= form_for user, :html => { :class => 'form-signin', :id => 'sign-up' } do |f| %>
   <h3 class='form-signin-heading'> Sign up </h3>
   
-  <% if @errors %>
-  
-  <% @errors.each do |message| %>
-  <%= message %>
-  <% end %>
-  
-<% end %>
+<div id='errors'>
+    <% if @errors %>
+        <% @errors.each do |message| %>
+          <%= message %><br>
+        <% end %>
+    <% end %>
+</div>
 
   <div class="control-group">
     <%= f.label :username, :class => 'control-label' %>
