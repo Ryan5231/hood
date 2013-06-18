@@ -4,16 +4,13 @@
       <li><h1>Shop Next Door.</h1></li>
     </ul>
   </div>
-
-<% if current_user %>
-    <h3 id='welcome-hood'><%= link_to 'Take me to my Neighborhood', neighborhood_path(current_user.neighborhoods.first.id)%></h3>
-  <% end %>
-
-    <h3>The power to choose the next business in your neighborhood.</h3>
-
-
 </div>
-<div class='container-fluid' id='welcome-container'>
+
+  <div class='container-fluid' id='welcome-container'>
+    <% if current_user %>
+      <h3 id='welcome-hood'><%= link_to 'Take me to my Neighborhood', neighborhood_path(current_user.neighborhoods.first.id)%></h3>
+    <% end %>
+  </div>
   <div class='row-fluid'>
     <div class='span8'>
       <div id='store-slider'>
@@ -33,7 +30,6 @@
             </ul>
           </div>
       </div>
-
     </div>
     <div class='span4'>
       <div id='welcome-tagline'>
