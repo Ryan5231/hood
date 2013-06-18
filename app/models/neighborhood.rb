@@ -1,5 +1,5 @@
 class Neighborhood < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :id
   has_many :listings
   has_many :realtors, :class_name => "User"
   has_and_belongs_to_many :users

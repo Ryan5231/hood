@@ -1,9 +1,9 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :title, :content, :user_id, :post_id
+  attr_accessible :content, :user_id, :listing_id
 
-  belongs_to :post
   belongs_to :user
+  belongs_to :listing
 
-  validates :title, :content, :user_id, :post_id, :presence => true
+  validates :content, :user_id, :listing_id, :presence => true
 
 end
