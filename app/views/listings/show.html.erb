@@ -7,7 +7,7 @@
         <h3 class='subhead'>the shop next door</h3>
         <h1><%= @listing.title %></h1>
         <h3><%= @listing.address %></h3>
-
+        <h4><%= link_to "Edit Listing", edit_listing_path(@listing) %>
       </div>
     </div>
   </div>
@@ -26,14 +26,14 @@
       <div id='choice'>
         <h3 class='subhead'>what should this retail space be?</h3>
         <p>  add your own choice, or vote for an existing one here.</p> 
-        <div class="hidden choice_template">
+        <div class="choices-listing">
           <%= render 'choices_voting_template' %>
         </div>
-        
+        <div class="choices-listing">
           <% @listing.choices.each do |choice| %>
             <%= render 'choices_voting_form', :choice => choice %>
           <% end %>
-        
+        </div>
         <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
       </div>
     </div>  
