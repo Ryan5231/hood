@@ -32,11 +32,11 @@ body#application {
 }
 
 .navbar {
-  background-image: none;
+  background-image: url('darkgrass.jpg');
   background-color: #055208;
 }
 
-.navbar-inverse a {
+.navbar-inverse {
   color: #fff;
 }
 
