@@ -1,8 +1,9 @@
 
+
 <div class='span6'>
+
   <%= form_for user, :html => { :class => 'form-signin', :id => 'sign-up' } do |f| %>
   <h3 class='form-signin-heading'> Sign up </h3>
-  
 <div id='errors'>
     <% if @errors %>
         <% @errors.each do |message| %>
@@ -45,4 +46,3 @@
     </div>
   </div>
   <% end %>
-</div>

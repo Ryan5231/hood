@@ -3,8 +3,6 @@
   font-weight: 200;
 }
 
-
-
 .store-pic {
 
   height: 100%;
@@ -15,10 +13,20 @@
 #store-slider {
   background-image: url('storefront.jpg');
   background-size: cover;
-  width: 600px;
+  padding-top: 0;
+  margin-top: 0;
+  width: 75%;
   height: 100%;
+  float: right;
 }
 
+#welcome-bar {
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;  
+  display: absolute;
+  width: 20%;
+  float: left;
+}
 
 .slider-container {
 
@@ -79,23 +87,12 @@ font-size: 14px;
   -o-background-size: cover;
   background-size: cover;
 }*/
-/*
-#sign-in {
+
+/*#sign-in {
   background-color: transparent;
 }
-
+*/
 .welcome-nav{
   width: 100%;
-  background: rgb(211,106,23);
-  position: fixed;
-  opacity: .7;
+  height: 60px;
 }
-
-.welcome-nav h1{
-  padding-left: 48px;
-  color: white;
-  float: left;
-}*/
-
-
-

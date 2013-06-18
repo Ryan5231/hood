@@ -9,7 +9,8 @@ body {
   padding: 0;
 }
 
-body#application {
+body#welcome-page {
+  background-color: black;
 }
 
 .listing-form {
@@ -18,13 +19,10 @@ body#application {
 }
 
 .comment {
-  
   border-radius: 2px;
   width: 50%;
-  
   border-bottom-right-radius: 30px;
   border-top-right-radius: 30px;
-  
 }
 
 .masthead {
@@ -39,7 +37,6 @@ body#application {
 .navbar-inverse {
   color: #fff;
 }
-
 
 #profile-pic {
   background-image: url('placeholder.png');
@@ -75,7 +72,7 @@ body#application {
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
-
+ 
 #listing-description, #listing-title, #listing-image {
   float: left;
 }
@@ -100,7 +97,7 @@ body#application {
 .form-signin {
   max-width: 300px;
   padding: 19px 29px 29px;
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
   background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
