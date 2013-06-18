@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
 
   def create
     if params[:neighborhood]
-      @hood = Neighborhood.find(params[:neighborhood])
+      @hood = Neighborhood.find(params[:neighborhood]).first
     else
       @hood = Neighborhood.find_or_create_by_name(params[:neighborhood_name])
     end
