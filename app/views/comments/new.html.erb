@@ -1,5 +1,5 @@
-
-
+<div class='masthead'></div>
+<div class='container'>
  <%= form_for @comment do |f|%>
     <%= f.label :content %>
     <%= f.text_field :content %>
@@ -7,3 +7,4 @@
     <%=f.hidden_field(:listing_id, :value => @listing.id) %><br>
     <%= f.submit "Submit Comment" %>
   <% end %>
+</div>
