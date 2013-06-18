@@ -33,13 +33,13 @@ body#application {
 
 .navbar {
   background-image: none;
-  background-color: #01A611;
+  background-color: #055208;
 }
 
-.navbar-inner {
-  background-image: none;
-  background-color: #01A611;
+.navbar-inverse a {
+  color: #fff;
 }
+
 
 #profile-pic {
   background-image: url('placeholder.png');
