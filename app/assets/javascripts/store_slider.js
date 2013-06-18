@@ -20,7 +20,7 @@ $(document).ready(function() {
   setInterval( function() {
     console.log('hey')
     slide()
-  }, 6000 )
+  }, 4000 )
 
 });
 

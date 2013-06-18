@@ -8,15 +8,26 @@ class UsersController < ApplicationController
   end
 
   def create
+    p "whhhasfdsafasfsafsasadsda;l;fakfjaslk;fjsal;kjflsak;jfl;ksjlksdjfl;ksaj"
     @user = User.new(params[:user])
-    @hood = Neighborhood.find(params[:neighborhood])
-    @user.neighborhoods << @hood
-    if @user.save
+    if params[:neighborhood]
+     @hood = Neighborhood.find(params[:neighborhood])
+      puts "neighborhood is #{@hood}"
+      @user.neighborhoods << @hood
+      if @user.save
       session[:id] = @user.id
       redirect_to @user
+      else
+      @errors = @user.errors.full_messages
+      @neighborhoods = Neighborhood.all
+      p @errors
+      render :template => '/welcome/index'
+      end
     else
-      p @user.errors.full_messages
-      redirect_to root_path
+      p "did i get here?"
+      @neighborhoods = Neighborhood.all
+      @errors = ["You must select a neighborhood"]
+      render :template => '/welcome/index'
     end
   end
 
@@ -33,7 +44,6 @@ class UsersController < ApplicationController
     if user.update_attributes(params[:neighbor])
       redirect_to user
     else
-      p "yes im here ______________________________"
       redirect_to edit_user_path(@user)
     end
   end

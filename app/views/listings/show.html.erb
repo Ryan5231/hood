@@ -1,25 +1,36 @@
 <div class='masthead'></div>
+<%= render 'layouts/breadcrumb' %>
 <div class='row-fluid'>
-  <%= render 'layouts/breadcrumb' %>
-  <h1><%= @listing.title %></h1>
-  <%= image_tag @listing.image_url(:main).to_s if @listing.image_url%>
-  <div class="hidden choice_template">
-    <%= render 'choices_voting_template' %>
+  <div class='span12' id='listing-title'>
+    <div class='container' id='listing'>
+      <h1><%= @listing.title %></h1>
+    </div>
+  <div class='span6' id='listing-image'>
+    <%= image_tag @listing.image_url(:main).to_s if @listing.image_url%>
   </div>
-  <div class='choices'>
-    <% @listing.choices.each do |choice| %>
-      <%= render 'choices_voting_form', :choice => choice %>
-    <% end %>
+  <div class='span6' id='listing-description'>
+    <%= @listing.description %>
   </div>
-  <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
-</div>
-
-<h2><%= link_to 'Create Comment', new_comment_path(@listing) %><h2>
-
-
-
-  <% @listing.comments.each do|comment| %>
-      <h3 class='comment'><%= comment.content %></h3><br>
-    <% end %>
-
+  </div>
+  <div class='span6'>
+    <div class='container' id='choice'> 
+      <div class="hidden choice_template">
+        <%= render 'choices_voting_template' %>
+      </div>
+      <div class='choices'>
+        <% @listing.choices.each do |choice| %>
+          <%= render 'choices_voting_form', :choice => choice %>
+        <% end %>
+      </div>
+      <%= render 'new_choice_form', :choice => @choice, :listing => @listing %>
+    </div>
+  </div>
+  <div class='span6'>
+    <div class='container' id='comment'>
+      <h2><%= link_to 'Create Comment', new_comment_path(@listing) %><h2>
+      <% @listing.comments.each do |comment| %>
+        <h3 class='comment'><%= comment.content %></h3>
+      <% end %>
+    </div>
+  </div>
 

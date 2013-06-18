@@ -1,20 +1,24 @@
 
 function initialize() {
+  var sw = new google.maps.LatLng(37.6,-122.5);
+  var ne = new google.maps.LatLng(37.83, -122.38);
+  var bounds = new google.maps.LatLngBounds(sw, ne);
   var listings = $('#map-canvas').data().listings;
   var hood = $('#map-canvas').data().hood;
   var mapOptions = {
-    zoom: 14,
+    zoom: 15,
     center: new google.maps.LatLng(0,0),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  setHoodCenter(hood, map);
-  listings.forEach(markListing, map);
+  var mapping_info = [map, bounds];
+  setHoodCenter(hood, bounds, map);
+  listings.forEach(markListing, mapping_info);
 }
 
-function setHoodCenter(hood_name, map) {
+function setHoodCenter(hood_name, bounds, map) {
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( {'address': hood_name}, function(results, status){
+  geocoder.geocode( {'address': hood_name, 'bounds': bounds}, function(results, status){
     if (status == google.maps.GeocoderStatus.OK){
       map.setCenter(results[0].geometry.location);
     }
@@ -25,11 +29,12 @@ function setHoodCenter(hood_name, map) {
 }
 
 function markListing(listing){
-  var map = this;
+  var map = this[0];
+  var listing_bounds = this[1];
   var address = listing.address;
   var title = listing.title;
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({ 'address': address }, function(results, status){
+  geocoder.geocode({ 'address': address, 'bounds': listing_bounds}, function(results, status){
     if (status == google.maps.GeocoderStatus.OK){
       dropPin(listing, results[0].geometry.location, map);
     }
@@ -58,16 +63,10 @@ function dropPin(listing, location, map) {
   setInfoWindow(listing, map, myPin);
 }
 
-function loadMapScript() {
-  var script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDptMR6xnHBRufnYLWlnEWrZs75Zt37WTo&sensor=false&callback=initialize";
-  document.head.appendChild(script);
-}
 
 function conditionalLoad() {
   if ( $('#map-canvas').length != 0) {
-    loadMapScript();
+    initialize();
   }
 }
 

@@ -1,7 +1,7 @@
 <h1> Edit Your Info</h1>
 
 <div class='user-edit-form'>
-<% if current_user.type == 'Neighbor'  %>
+
 
 
 <% if flash[:edit_neighbor_error] %>
@@ -24,5 +24,4 @@
     <%= f.submit "Edit Profile" %>
   <% end %>
 
-<% end %>
 </div>

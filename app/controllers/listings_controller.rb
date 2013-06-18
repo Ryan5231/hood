@@ -12,14 +12,18 @@ class ListingsController < ApplicationController
 
   def create
     if params[:neighborhood]
-      @hood = Neighborhood.find(params[:neighborhood])
+      @hood = Neighborhood.find(params[:neighborhood]).first
+      p @hood
     else
       @hood = Neighborhood.find_or_create_by_name(params[:neighborhood_name])
+      p @hood
     end
     @listing = Listing.new(params[:listing])
     @listing.neighborhood = @hood
     @listing.realtor_id = current_user.id
     if @listing.save
+      puts "NEW LISTING********"
+      p @listing
       redirect_to @listing
     else
       flash[:listing_error] = "Please fill out all fields"

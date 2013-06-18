@@ -1,6 +1,9 @@
-<div class='span6'>
+
   <%= form_tag(sessions_path, :method => 'post', :class => 'form-signin', :id => 'sign-in') do %>
   <h3 class='form-signin-heading'> Log in </h3>
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
   <div class='control-group'>
     <%= label_tag("user_email", "Email") %>
     <%= text_field_tag("user[email]") %>
@@ -13,4 +16,3 @@
     <%= submit_tag("Log In", :class => 'btn controls') %>
   </div>
   <% end %>
-</div>
