@@ -12,15 +12,16 @@
   background-repeat: none;
 }
 
-/*#store-slider {
+#store-slider {
   background-image: url('storefront.jpg');
   background-size: cover;
   width: 600px;
   height: 100%;
-}*/
+}
 
 
 .slider-container {
+  
   width: 100%;
   overflow: hidden;
 }
@@ -55,19 +56,20 @@ padding-left: 14px;
 font-size: 14px;
 }
 
-#welcome-hood {
+/*#welcome-hood {
+  background: url('storefront.jpg')
   background-color: yellow;
   color: white;
-}
+}*/
 
-#welcome-page {
-  background: url('coffee.jpg') no-repeat center center fixed;
+/*#welcome-page {
+  background: url('storefront.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
+}*/
+/*
 #sign-in {
   background-color: transparent;
 }
@@ -83,23 +85,6 @@ font-size: 14px;
   padding-left: 48px;
   color: white;
   float: left;
-}
+}*/
 
-#sessions ul {
-  display: inline;
-  float: right;
-}
 
-#sessions li {
-  color: white;
-  list-style-type: none;
-  display: inline;
-  font-size:  26px;
-  float: right;
-  padding-top: 20px;
-  padding-right: 24px;
-}
-
-#sessions li a {
-  color: white;
-}
