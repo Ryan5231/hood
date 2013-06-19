@@ -1,22 +1,24 @@
 <div class='row-fluid sub-box'>
   <%= form_tag(vote_choice_path(choice), :class => 'choice_vote', :remote => true) do %>
-    <div class='span6'>
+    <div class='span2'>
       <div class='choice-user-pic'>
         <% user = User.find(choice.neighbor_id) %>
         <%= image_tag user.image_url(:mini).to_s if user.image_url%>
       </div>
+    </div>
+    <div class='span5'>
       <div class='choice-text'>
-        <h1><%= label_tag(:choice, "#{choice.content}") %></h1>
+        <%= label_tag(:choice, "#{choice.content}", :class => 'choice-text') %>
       </div>
     </div>
-    <div class='span3'>
+    <div class='span2'>
       <div class='choice-vote-count'>
-        <%= label_tag(:choice, "#{choice.vote_count}", :class => 'vote_count') %>
+        <%= label_tag(:choice, "#{choice.vote_count}", :class => 'label vote_count') %>
       </div>
     </div>
-    <div class='span3'>
+    <div class='span2'>
       <div class='choice-vote'>
-        <%= submit_tag("I Want This") %>
+        <%= submit_tag("Vote", :class => 'btn') %>
       </div>
     </div>
   <% end %>
