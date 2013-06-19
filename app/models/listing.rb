@@ -6,7 +6,7 @@ class Listing < ActiveRecord::Base
   has_many :comments
   mount_uploader :image, ListingImageUploader
 
-  validates :title, :description, :neighborhood, :realtor, :address, :presence => true
+  validates :title, :description, :neighborhood_id, :realtor, :address, :presence => true
   validates :status, :inclusion => { :in => ['active', 'inactive'], :message => "Not a valid status"}
 end
 
