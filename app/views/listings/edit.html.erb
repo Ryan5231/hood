@@ -1,25 +1,32 @@
-<div class='listing-form'>
-<% if current_user.type == 'Realtor'  %>
-
-
-<% if flash[:listing_error] %>
-<%= flash[:listing_error] %>
-<% end %>
-
-
-  <%= form_for (@listing) do |f|%>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.label :address %>
-    <%= f.text_field :address %><br />
-    <%= image_tag @listing.image_url(:main) unless @listing.image.blank? %>
-    <%= f.label :image, "Update Photo" %>
-    <%= f.file_field :image  %>
-    <%=f.hidden_field(:realtor_id, :value => current_user.id) %><br><br>
-    <%= f.submit "Edit Listing" %>
-  <% end %>
-
-<% end %>
+<div class='masthead'></div>
+<%= render 'layouts/breadcrumb' %>
+<div class='container'>    
+  <div class='row-fluid'>
+    <div class='span6 backyard-box'>
+      <div class='listing-form'>
+        <% if current_user.type == 'Realtor'  %>
+          <% if flash[:listing_error] %>
+            <%= flash[:listing_error] %>
+          <% end %>
+          <%= form_for (@listing) do |f|%>
+            <div class='control-group'>
+              <h1>Edit Your Listing</h1>
+            </div>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+            <%= f.label :address %>
+            <%= f.text_field :address %><br />
+            <%= image_tag @listing.image_url(:main) unless @listing.image.blank? %>
+            <%= f.label :image, "Update Photo" %>
+            <%= f.file_field :image  %>
+            <%=f.hidden_field(:realtor_id, :value => current_user.id) %><br><br>
+            <%= f.submit "Edit Listing", :class => 'btn btn-info' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
