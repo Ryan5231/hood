@@ -22,9 +22,11 @@ $(document).on('click','.new_comment_button', function(event){
 });
 
 $(document).on('ajax:success', '.new_comment', function(event, data){
- var commentTemplate = $("<h3 class='comment'></h3>");
+ var commentTemplate = $('.comment-template');
  var newComment = commentTemplate.clone();
- newComment.text(data.comment.content);
+ newComment.removeClass('hidden');
+ newComment.find('img').attr('src', data.image_url);
+ newComment.find('h3').text(data.comment.content);
  $('#comment').append(newComment);
  $('#comment_content').val("");
  $('.new_comment_button').show();

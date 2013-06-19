@@ -29,7 +29,7 @@
           <%= f.file_field :image, :class => 'controls' %>
         </div>
         <%=f.hidden_field(:realtor_id, :value => current_user.id) %>
-        <div class='control-group'>
+        <div class='control-group' id='hood-dropdown'>
           <%= f.label :neighborhood, "If you know it already, pick the neighborhood here...", :class => 'control-label' %>
           <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls select', :multiple => true}) %>
         </div>

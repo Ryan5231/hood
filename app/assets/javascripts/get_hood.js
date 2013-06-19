@@ -1,12 +1,11 @@
 
 function showUpdateView(hood){
-  var addressField = '<input id="neighborhood_name" name="neighborhood_name" size="30" type="text" class="controls">';
+  var hoodField = '<input id="neighborhood_name" name="neighborhood_name" size="30" type="text" class="controls">';
   var updateButton = '<br /><button id="update_hood" name="button" type="button" class="btn btn-info controls">Update listing neighborhood</button>';
-  addressField = $(addressField);
-  addressField.val(hood);
-  $('.controls select').detach();
-  $('.alt_hood_find control-label').detach();
-  $('#find_hood').before(addressField);
+  hoodField = $(hoodField);
+  hoodField.val(hood);
+  $('#hood-dropdown').detach();
+  $('#find_hood').before(hoodField);
   $('#neighborhood_name').after(updateButton);
   $('#find_hood').detach();
 }
@@ -36,7 +35,6 @@ function updateHood(address, bounds){
     }
   });
 }
-
 
 
 $(document).on('click', '#find_hood', function() {

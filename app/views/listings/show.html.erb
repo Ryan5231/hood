@@ -56,12 +56,16 @@
       <h3 class='subhead'>add your two cents here.</h3>
       <h3><%= link_to 'Create Comment', "#", :class => 'new_comment_button' %></h3>
       <%= render 'new_comment_form', :comment => @comment, :listing => @listing %>
+      <div class='comment-template hidden'>
+        <img alt="temp" src="pending">
+        <h3 class='comment'></h3>
+      </div>
       <% @listing.comments.each do |comment| %>
       <% user = User.find(comment.user_id) %>
       <div class='comment-user-pic'>
         <%= image_tag user.image_url(:mini).to_s if user.image_url%>
+        <h3 class='comment'><%= comment.content %></h3>
       </div>
-      <h3 class='comment'><%= comment.content %></h3>
       <% end %>
     </div>
   </div>

@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(params[:comment])
-    render :json => {:comment => comment}
+    render :json => {:comment => comment, :image_url => comment.user.image_url(:mini)}
   end
 
 end
