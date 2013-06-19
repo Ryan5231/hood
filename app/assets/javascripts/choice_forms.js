@@ -1,7 +1,7 @@
 
 $(document).on('ajax:success', '.new_choice', function(event, data){
-   var newChoice = $('.choices-listing-template').find(':first-child')[0];
-   newChoice = $(newChoice);
+   var choiceTemplate = $($('.choices-listing-template').find(':first-child')[0]);
+   newChoice = choiceTemplate.clone();
    newChoice.removeClass('hidden');
    newChoice.find('form').attr('action', data.path);
    newChoice.find('form h1 label').text(data.choice.content);
@@ -10,19 +10,21 @@ $(document).on('ajax:success', '.new_choice', function(event, data){
 });
 
 
-// $(document).on('ajax:success', '.choice_vote', function(event, data){
-//   $(this).parent().parent().parent().find('.vote_count').text(data.votes); 
-// }); 
+$(document).on('ajax:success', '.choice_vote', function(event, data){
+	var choiceVotes = $(this).find('.vote_count');
+  choiceVotes.text(data.votes); 
+}); 
 
-// $(document).on('ajax:success', '.new_comment', function(event, data){
-//  console.log(data);
-//  var newComment = $($('h3.comment')[0]);
-//  newComment.text(data.content);
-//  $('h3.comment:last-child')after(newComment);
-// });
+$(document).on('click','.new_comment_button', function(event){
+	event.preventDefault();
+	$('.comment_form').removeClass('hidden');
+	$(this).detach();
+});
 
-// $(document).on('click','.new_comment_button', function(event){
-// 	event.preventDefault;
-// 	$('.comment_form').removeClass('hidden');
-// 	$(this).detach();
-// });
+$(document).on('ajax:success', '.new_comment', function(event, data){
+ console.log(data);
+ var commentTemplate = $("<h3 class='comment'></h3>");
+ var newComment = commentTemplate.clone();
+ newComment.text(data.comment.content);
+ $('#comment').append(newComment);
+});
