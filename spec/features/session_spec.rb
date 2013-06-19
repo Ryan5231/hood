@@ -51,6 +51,7 @@ describe "sessions" do
       hood = Neighborhood.create(name: "Castro")
       user = User.create(username: 'allen', 
                          email: 'allen@aol.com',
+                         type: 'Realtor',
                          password: 'password',)
       user.neighborhoods << hood
       visit root_path

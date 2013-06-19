@@ -21,13 +21,13 @@ class UsersController < ApplicationController
       @errors = @user.errors.full_messages
       @neighborhoods = Neighborhood.all
       p @errors
-      render :template => '/welcome/index'
+      render '/welcome/index', :layout => 'welcome'
       end
     else
       p "did i get here?"
       @neighborhoods = Neighborhood.all
       @errors = ["You must select a neighborhood"]
-      render :template => '/welcome/index'
+      render '/welcome/index', :layout => 'welcome'
     end
   end
 
