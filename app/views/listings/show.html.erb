@@ -10,7 +10,7 @@
         <div id='choice'>
           <h1>what should i be?</h1>
           <p>vote here</p> 
-          <div class="choices-listing">
+          <div class="choices-listing-template">
             <%= render 'choices_voting_template' %>
           </div>
           <div class="choices-listing">
@@ -32,7 +32,6 @@
         <h3><%= @listing.address %></h3>
         <h3 class='subhead'>details</h3>
         <%= @listing.description %>
-
         <h4><%= link_to "Edit Listing", edit_listing_path(@listing) %></h4>
       </div>
     </div>
