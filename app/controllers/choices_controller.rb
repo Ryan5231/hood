@@ -10,7 +10,6 @@ class ChoicesController < ApplicationController
   end
 
   def vote
-    p params
     @choice = Choice.find(params[:id])
     vote = Vote.create(choice_id: @choice.id, neighbor_id: current_user.id)
     render :json => {:choice => @choice, :votes => @choice.vote_count}

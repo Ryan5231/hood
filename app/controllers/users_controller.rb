@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "whhhasfdsafasfsafsasadsda;l;fakfjaslk;fjsal;kjflsak;jfl;ksjlksdjfl;ksaj"
     @user = User.new(params[:user])
     if params[:neighborhood]
      @hood = Neighborhood.find(params[:neighborhood])
-      puts "neighborhood is #{@hood}"
+     p "---------------------------"
+     p @hood
       @user.neighborhoods << @hood
       if @user.save
       session[:id] = @user.id
@@ -20,11 +20,9 @@ class UsersController < ApplicationController
       else
       @errors = @user.errors.full_messages
       @neighborhoods = Neighborhood.all
-      p @errors
       render '/welcome/index', :layout => 'welcome'
       end
     else
-      p "did i get here?"
       @neighborhoods = Neighborhood.all
       @errors = ["You must select a neighborhood"]
       render '/welcome/index', :layout => 'welcome'
@@ -49,7 +47,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
+    if current_user.id == params[:id].to_i
       @user = User.find(params[:id])
     else
       redirect_to root_path
@@ -57,7 +55,6 @@ class UsersController < ApplicationController
   end
 
   def add_photo
-    p params
     @user = User.find(params[:id])
     if params[:realtor]
       @user.update_attributes(params[:realtor])
