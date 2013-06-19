@@ -56,4 +56,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def add_photo
+    p params
+    @user = User.find(params[:id])
+    if params[:realtor]
+      @user.update_attributes(params[:realtor])
+    elsif params[:neighbor]
+      @user.update_attributes(params[:neighbor])
+    else 
+      puts "NOT A REALTOR OR NEIGHBOR"
+    end    
+    redirect_to @user
+  end
+
 end

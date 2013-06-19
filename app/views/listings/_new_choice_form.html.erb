@@ -1,6 +1,7 @@
 <%= form_for @choice, :remote => true do |f|%>
-  <%= f.label :content, "What should I be?" %>
-  <%= f.text_field :content %>
+  <%= f.label :content, "What should I be?"%>
+  
+  <%= f.text_field :content, :placeholder => "e.g., 'A Pet Store'" %>
   <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
   <%= f.submit "Create Choice" %>
 <% end %>

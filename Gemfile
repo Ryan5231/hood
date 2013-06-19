@@ -40,8 +40,9 @@ group :test do
   gem "guard-rspec"
   gem 'shoulda-matchers'
   gem 'launchy'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
 end
+
 
 
 # To use ActiveModel has_secure_password
