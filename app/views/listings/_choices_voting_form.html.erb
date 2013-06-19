@@ -1,13 +1,13 @@
-<div class='row'>
+<div class='row-fluid choice-row'>
   <div class='span6'>
     <div class='choice-text'>
       <%= form_tag(vote_choice_path(choice), :class => 'choice_vote', :remote => true) do %>
-      <%= label_tag(:choice, "#{choice.content}") %>
+      <h1><%= label_tag(:choice, "#{choice.content}") %></h1>
     </div>
   </div>
   <div class='span3'>
     <div class='choice-vote-count'>
-      <%= label_tag(:choice, "Votes: #{choice.vote_count}", :class => 'vote_count') %>
+      <%= label_tag(:choice, "#{choice.vote_count}", :class => 'vote_count') %>
     </div>
   </div>
   <div class='span3'>
