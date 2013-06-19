@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @hood = @listing.neighborhood
     @choice =Choice.new
+    @comment =Comment.new
   end
 
   def new

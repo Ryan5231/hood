@@ -38,7 +38,8 @@
     <div class='span6'>
       <div id='comment'>
         <h3 class='subhead'>add your two cents here.</h3>
-        <h3><%= link_to 'Create Comment', new_comment_path(@listing) %></h3>
+        <h3><%= link_to 'Create Comment', "#", :class => 'new_comment_button' %></h3>
+        <%= render 'new_comment_form', :comment => @comment, :listing => @listing %>
           <% @listing.comments.each do |comment| %>
           <% user = User.find(comment.user_id) %>
           <div class='comment-user-pic'>

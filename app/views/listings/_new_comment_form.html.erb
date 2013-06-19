@@ -1,0 +1,9 @@
+<div class='comment_form hidden'>
+ <%= form_for comment, :remote => true do |f|%>
+    <%= f.label :content, "Comment" %>
+    <%= f.text_area :content, :cols => 100, :rows => 4 %>
+    <%=f.hidden_field(:user_id, :value => current_user.id) %><br>
+    <%=f.hidden_field(:listing_id, :value => listing.id) %><br>
+    <%= f.submit "Submit Comment" %>
+  <% end %>
+</div>
