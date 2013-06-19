@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(params[:comment])
-    redirect_to listing_path(comment.listing)
+    render :json => {:comment => comment}
   end
 
 end

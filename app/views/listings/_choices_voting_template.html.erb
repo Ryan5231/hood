@@ -1,22 +1,22 @@
-<div class='row-fluid choice-title-row hidden'>
-  <div class='span6'>
-    <div class='choice-user-pic'>
-      <%= image_tag current_user.image_url(:mini).to_s if current_user.image_url%>
+<div class='row-fluid sub-box hidden'>
+  <%= form_tag("temp", :class => 'choice_vote', :remote => true) do %>
+    <div class='span6'>
+      <div class='choice-user-pic'>
+        <%= image_tag current_user.image_url(:mini).to_s if current_user.image_url%>
+      </div>
+      <div class='choice-text'>
+        <h1><%= label_tag(:choice, "choice content goes here") %></h1>
+      </div>
     </div>
-    <div class='choice-text'>
-      <%= form_tag("temp", :class => 'choice_vote', :remote => true) do %>
-      <h1><%= label_tag(:choice, "choice content goes here") %></h1>
+    <div class='span3'>
+      <div class='choice-vote-count'>
+        <%= label_tag(:choice, "0", :class => 'vote_count') %>
+      </div>
     </div>
-  </div>
-  <div class='span3'>
-    <div class='choice-vote-count'>
-      <%= label_tag(:choice, "0", :class => 'vote_count') %>
+    <div class='span3'>
+      <div class='choice-vote'>
+        <%= submit_tag("I Want This") %>
+      </div>
     </div>
-  </div>
-  <div class='span3'>
-    <div class='choice-vote'>
-      <%= submit_tag("I Want This") %>
-    </div>
-  </div>
-      <% end %>
+  <% end %>
 </div>
