@@ -28,5 +28,5 @@ $(document).on('ajax:success', '.new_comment', function(event, data){
  $('#comment').append(newComment);
  $('#comment_content').val("");
  $('.new_comment_button').show();
- $('.new_comment').hide();
+ $('.comment_form').addClass('hidden');
 });
