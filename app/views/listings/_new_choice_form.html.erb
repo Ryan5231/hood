@@ -2,5 +2,5 @@
   <%= f.label :content, "Add your own suggestion here"%>
   <%= f.text_field :content, :placeholder => "e.g., 'A Pet Store'" %>
   <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
-  <%= f.submit "Create Choice" %>
+  <%= f.submit "Create Choice", :class => "create_choice" %>
 <% end %>

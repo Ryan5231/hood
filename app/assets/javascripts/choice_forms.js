@@ -2,9 +2,11 @@
 $(document).on('ajax:success', '.new_choice', function(event, data){
    var newChoice = $('.choices-listing-template').find(':first-child')[0];
    newChoice = $(newChoice);
+   newChoice.removeClass('hidden');
    newChoice.find('form').attr('action', data.path);
    newChoice.find('form h1 label').text(data.choice.content);
    $('.choices-listing').append(newChoice);
+   $('#choice_content').val("");
 });
 
 
