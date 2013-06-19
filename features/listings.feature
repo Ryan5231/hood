@@ -1,7 +1,7 @@
-Feature: Edit Listing
-  In order to correct a mistake
-  As a user
-  I want to edit a listing
+  Feature: Edit Listing
+    In order to correct a mistake
+    As a user
+    I want to edit a listing
 
   Scenario: Edit Listing
     Given I am logged in as a user with email "joe@example.com" and password "seekrit"

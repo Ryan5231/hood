@@ -44,6 +44,7 @@ group :test do
 end
 
 
+
 # To use ActiveModel has_secure_password
 
 # To use Jbuilder templates for JSON
