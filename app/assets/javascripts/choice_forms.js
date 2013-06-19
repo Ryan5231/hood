@@ -18,14 +18,15 @@ $(document).on('ajax:success', '.choice_vote', function(event, data){
 $(document).on('click','.new_comment_button', function(event){
 	event.preventDefault();
 	$('.comment_form').removeClass('hidden');
-	$(this).detach();
+	$(this).hide();
 });
 
 $(document).on('ajax:success', '.new_comment', function(event, data){
- console.log(data);
  var commentTemplate = $("<h3 class='comment'></h3>");
  var newComment = commentTemplate.clone();
  newComment.text(data.comment.content);
  $('#comment').append(newComment);
  $('#comment_content').val("");
+ $('.new_comment_button').show();
+ $('.new_comment').hide();
 });
