@@ -1,62 +1,48 @@
-<div class='row-fluid'>
-  <div class='container'>
-    <% if @user.type == 'Neighbor' %>
-      <div class='masthead'><h1>Neighbor Profile</h1>
+<div class='masthead'></div>
+<div class='container'>
+  <div class='row-fluid'>
+    <div class='span12'>
+      <h1><%= @user.username %>'s Profile</h1>
         <%= button_to "Edit Profile", edit_user_path(@user), {:method => :get, :class => 'btn'} %>
-      </div>
-      <div class='span6 profile'>
-        <div class="well well-small">
-          Neighbor details
-        </div>
-    <% else %>
-      <div class='masthead'><h1>Realtor Profile</h1>
-        <%= button_to "Edit Profile", edit_user_path(@user), :method => :get %>
-      </div>
-      <div class='span6 profile'>
-        <div class="well well-small">
-          Realtor details
-        </div>
-    <% end %>
-        <h1><%= @user.username %></h1>
-        <p>Email: <%= @user.email %></p>
-      </div>
-      <div class='span6 profile'>
-        <div class="well well-small">
-          My neighborhoods
-        </div>
-      <% @user.neighborhoods.each do |n|  %>
-        <%= link_to n.name, neighborhood_path(n), :class => "label label-success" %>
-        </span>
-      <% end %>
     </div>
+  </div>
+  <div class='row-fluid'>
     <div class='span6 profile'>
       <div class="well well-small">
         Profile Pic
       </div>
-        <%= image_tag @user.image_url(:thumb).to_s if @user.image_url%>
-        <% if @user.image_url %>
-        <div class='update_user_image'>
-            <%= form_for @user, :url => add_user_photo_path(@user) do |f| %>
-              <%= f.label :image, "Change Your Photo" %>
-              <%= f.file_field :image %>
-              <%= f.submit "Update Photo" %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class='add_user_image'>
-            <%= form_for @user, :url => add_user_photo_path(@user) do |f| %>
-              <%= f.label :image, "Upload a Photo" %>
-              <%= f.file_field :image %>
-              <%= f.submit "Add Photo" %>
-            <% end %>
-          </div>
+      <%= image_tag @user.image_url(:thumb).to_s if @user.image_url%>
+      <% if @user.image_url %>
+      <div class='update_user_image'>
+        <%= form_for @user, :url => add_user_photo_path(@user) do |f| %>
+          <%= f.label :image, "Change Your Photo" %>
+          <%= f.file_field :image %>
+          <%= f.submit "Update Photo" %>
         <% end %>
+      </div>
+      <% else %>
+      <div class='add_user_image'>
+        <%= form_for @user, :url => add_user_photo_path(@user) do |f| %>
+          <%= f.label :image, "Upload a Photo" %>
+          <%= f.file_field :image %>
+          <%= f.submit "Add Photo" %>
+        <% end %>
+      </div>
+      <% end %>
     </div>
+    <div class='span6 profile'>
+      <div class="well well-small">
+        My neighborhoods
+      </div>
+      <% @user.neighborhoods.each do |n|  %>
+        <%= link_to n.name, neighborhood_path(n), :class => "label label-success" %>
+      <% end %>
+    </div>
+    
   </div>
-
-  <div class='container'>
+  <div class='row-fluid'>    
     <div class='span6'>
-    <% if @user.type == 'Realtor' %>
+      <% if @user.type == 'Realtor' %>
       <h2>Open Listings</h2>
       <table class='table table-striped'>
         <tr>
@@ -64,7 +50,6 @@
           <th></th>
           <th></th>
         </tr>
-        
         <% @user.listings.each do |listing| %>
           <% if listing.status == 'active' %>
           <tr>
@@ -75,13 +60,13 @@
           <% end %>
         <% end %>  
       </table>
-
+    </div>
+    <div class='span6'>
       <h2>Closed Listings</h2>
       <table class='table table-striped'>
         <tr>
           <th>Listing Title</th>
-          <th></th>
-          
+          <th></th>    
         </tr>
         <% @user.listings.each do |listing| %>
           <% if listing.status == 'inactive' %>
@@ -92,6 +77,6 @@
           <% end %>
         <% end %>
       </table>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
