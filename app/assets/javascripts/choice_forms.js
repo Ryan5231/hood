@@ -27,4 +27,5 @@ $(document).on('ajax:success', '.new_comment', function(event, data){
  var newComment = commentTemplate.clone();
  newComment.text(data.comment.content);
  $('#comment').append(newComment);
+ $('#comment_content').val("");
 });
