@@ -22,8 +22,6 @@ class ListingsController < ApplicationController
     @listing.neighborhood = @hood
     @listing.realtor_id = current_user.id
     if @listing.save
-      puts "NEW LISTING********"
-      p @listing
       redirect_to @listing
     else
       flash[:listing_error] = "Please fill out all fields"

@@ -37,7 +37,7 @@ body#welcome-page {
 }
 
 .navbar {
-  background-image: url('1c.jpg');
+  background-image: url('darkgrass.jpg');
   background-color: #055208;
 }
 
@@ -98,6 +98,10 @@ body#welcome-page {
  
 #listing-description, #listing-title, #listing-image {
   float: left;
+}
+
+#comment_content {
+  width: 50%;
 }
 
 #map-canvas { 
