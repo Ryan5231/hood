@@ -39,9 +39,7 @@
         <% if current_user %>
           <h3 id='welcome-hood'><%= link_to 'Take me to my Neighborhood', neighborhood_path(current_user.neighborhoods.first.id)%></h3>
         <% end %>
-        <% if flash[:notice] %>
-          <div class="notice"><%= flash[:notice] %></div>
-        <% end %>
+ 
       </div>  
       <% if !current_user %>
         <div id='welcome-signin'>

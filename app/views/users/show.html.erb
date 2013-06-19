@@ -11,7 +11,7 @@
       </div>
     <% else %>
       <div class='masthead'><h1>Realtor Profile</h1>
-        <%= button_to "Edit Profile", :action => "edit" %>
+        <%= button_to "Edit Profile", edit_user_path(@user), :method => 'get' %>
       </div>
       <div class='span6 profile'>
       <div class="well well-small">
