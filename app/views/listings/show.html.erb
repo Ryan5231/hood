@@ -10,7 +10,7 @@
         <div id='choice'>
           <h1>what should i be?</h1>
           <p>vote here</p> 
-          <div class="choices-listing">
+          <div class="choices-listing-template">
             <%= render 'choices_voting_template' %>
           </div>
           <div class="choices-listing">
@@ -40,6 +40,10 @@
         <h3 class='subhead'>add your two cents here.</h3>
         <h3><%= link_to 'Create Comment', new_comment_path(@listing) %></h3>
           <% @listing.comments.each do |comment| %>
+          <% user = User.find(comment.user_id) %>
+          <div class='comment-user-pic'>
+            <%= image_tag user.image_url(:mini).to_s if user.image_url%>
+          </div>
           <h3 class='comment'><%= comment.content %></h3>
           <% end %>
       </div>

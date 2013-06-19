@@ -1,13 +1,20 @@
+<div class='masthead'></div>
 <%= render 'layouts/breadcrumb' %>
-<div class='container'>
+<div class='container' id='neighborhood'>
   <div class='row-fluid'>
-  <div class='span6'>
-    <h1><%= @hood.name %></h1>
-    <h2>Listings Available</h2>
-    <% @listings.each do |listing| %>
-    <a href="/listings/<%= listing.id %>"><%= listing.title %></a>
-    <% end %>
-  </div>
+    <div class='span6'>  
+      <div id='neighborhood-name'>
+        <h1><%= @hood.name %></h1>
+      </div>
+      <div id='neighborhood-listings'>
+        <h2>Listings Available</h2>
+        <% @listings.each do |listing| %>
+          <a href="/listings/<%= listing.id %>"><%= listing.title %></a>
+        <% end %>
+      </div>
+    </div>
+    <div class='span6'>
+      <div id="map-canvas" data-hood="<%=@hood.name %>" data-listings="<%= @hood.listings.to_json %>" />
+    </div>
 </div>
 
-<div id="map-canvas" data-hood="<%=@hood.name %>" data-listings="<%= @hood.listings.to_json %>" />
