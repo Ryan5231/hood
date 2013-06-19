@@ -1,4 +1,3 @@
-
 <div class='masthead'></div>
 <div class='container'>
     <div class='row-fluid'>
@@ -30,13 +29,13 @@
                         </div>
                         <%=f.hidden_field(:realtor_id, :value => current_user.id) %>
                         <div class='control-group'>
-                            <%= f.label :neighborhood, "If you know it already, pick the neighborhood here...", :class => 'control-label' %>
+                            <%= f.label :neighborhood, "Pick the Neighborhood", :class => 'control-label' %>
                             <%= select_tag(:neighborhood, options_from_collection_for_select(@neighborhoods, :id, :name), {:class => 'controls select', :multiple => true}) %>
                         </div>
-                        <p class='alt_hood_find'> ...OR </p>
+                        <p class='alt_hood_find'> OR </p>
                         <div class='control-group'>
-                            <%= label_tag :find_hood, "Click to find the neighborhood based on address", :class => 'alt_hood_find control-label' %>
-                            <%= button_tag "Find my hood", :id => 'find_hood', :class => 'btn btn-info controls', :type => 'button' %>
+                            <%= label_tag :find_hood, "Find my neighborhood based on address", :class => 'alt_hood_find control-label' %>
+                            <%= button_tag "Find my hood", :id => 'find_hood', :class => 'btn controls', :type => 'button' %>
                         </div>
                         <div class='control-group'>
                             <%= label_tag :end, "", :class => 'alt_hood_find control-label' %>
