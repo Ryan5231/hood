@@ -26,7 +26,8 @@ $(document).on('ajax:success', '.new_comment', function(event, data){
  var newComment = commentTemplate.clone();
  newComment.removeClass('hidden');
  newComment.find('img').attr('src', data.image_url);
- newComment.find('h4').text(data.comment.content);
+ newComment.find('h3').text(data.comment.content);
+ debugger
  $('#comment').append(newComment);
  $('#comment_content').val("");
  $('.new_comment_button').show();

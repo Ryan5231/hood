@@ -1,11 +1,7 @@
-textarea {
-  height: 150px;
-  width: 100%;
-}
 
-#comment-box textarea {
-  height: 40px;
-  width: 100%;
+.form-horizontal textarea {
+  height: 150px;
+  
 }
 
 html {
@@ -48,13 +44,6 @@ body#welcome-page {
  margin-top: 4em;
 }
 
-.comment {
-  border-radius: 2px;
-  
-  border-bottom-right-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
 .masthead {
   padding-top: 70px;
 }
@@ -73,7 +62,6 @@ body#welcome-page {
 .navbar .nav > li > a:hover {
   color: gray;
 }
-
 
 #profile-pic {
   background-image: url('placeholder.png');
@@ -202,6 +190,3 @@ body#welcome-page {
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
-
-
-

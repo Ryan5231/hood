@@ -84,7 +84,7 @@
             </div>
           </div>
         </div>
-        <% @listing.comments.each do |comment| %>
+        <% @listing.comments.reverse.each do |comment| %>
           <div class='row-fluid'> 
             <% user = User.find(comment.user_id) %>
             <div class='span2'>
@@ -102,7 +102,7 @@
               </div>
             </div>
             <div class='span10'>
-              <h4 class='comment'><%= comment.content %></h4>
+              <h4 class='comment'>"<%= comment.content %>"</h4>
             </div>
           </div>
         <% end %>
