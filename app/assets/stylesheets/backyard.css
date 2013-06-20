@@ -18,6 +18,10 @@ body#welcome-page {
    background: url('coffee.jpg') no-repeat center center fixed;
 }
 
+.breadcrumb {
+  background-color: #f7f2e4;
+}
+
 .subtitle {
   font-style: italic;
   font-size: 24px;
@@ -49,23 +53,21 @@ body#welcome-page {
   padding-top: 70px;
 }
 
-.navbar {
+.navbar .navbar-inner {
   background-image: none;
   background-color: #324785;
   opacity: .9;
 }
 
-/* TODO: this is ugly, we need to find a way to override without using important */
 .navbar .nav > li > a {
   color: white;
+  font-size: 18px;
 }
+
 .navbar .nav > li > a:hover {
   color: gray;
 }
 
-.navbar-inverse {
-  color: red;
-}
 
 #profile-pic {
   background-image: url('placeholder.png');
