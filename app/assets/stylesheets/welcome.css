@@ -110,3 +110,134 @@ font-size: 14px;
   color: white;
 }
 
+h1 {
+  color: #f7f2e4;
+  font-size: 80px;
+  padding-top: 60px;
+  float; left
+}
+
+.nav{
+  float: right;
+}
+
+.front-page {
+  background-color: #324785;
+  opacity: .9;
+  margin-top: 85px;
+  margin-left: 20px;
+  height: 60px;
+  line-height: 55px;
+  width: 50%;
+}
+
+.front-page li {
+  font-size: 46px;
+  list-style-type: none;
+  padding-top: 0px;
+  color: white;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.power {
+  margin-top: 200px;
+  color: #2d0b02;
+  background-color: #f7f2e4;
+  opacity: .75;
+  height: 50px;
+  line-height: 50px;
+}
+
+.power li {
+  font-size: 20px;
+  list-style-type: none;
+  display: inline;
+  padding-right: 20px;
+  padding-top: 35px;
+}
+
+.log-in {
+  margin-top: 179px;
+  background-color: white;
+  color: #2d0b02;
+  opacity: .75;
+  margin-left: 500px;
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+
+}
+
+
+.later {
+  display: block;
+  margin-top: 250px;
+  -webkit-transform: rotate(-11deg); 
+  -moz-transform: rotate(-11deg);
+  width: 50%;
+}
+
+.log-in ul {
+  -webkit-transform: rotate(-11deg); 
+  -moz-transform: rotate(-11deg); 
+  background-color: white;
+  display: inline-block;
+  -webkit-transform: rotate(-11deg); 
+  -moz-transform: rotate(-11deg); 
+}
+
+.log-in li {
+  display: inline;
+  -webkit-transform: rotate(-11deg); 
+  -moz-transform: rotate(-11deg); 
+  padding-left: 75px;
+}
+
+#log-in-form {
+  
+}
+
+#sign-up-form {
+}
+/*
+.log-in li {
+  display: inline-block;
+  list-style-type: none;
+  background-color: #f7f2e4;
+  padding-left: 40px;
+  font-size: 20px;
+  padding-right: 100px;
+  height: 35px;
+  line-height: 35px;
+  -webkit-transform: rotate(-11deg); 
+  -moz-transform: rotate(-11deg); 
+}*/
+
+
+/*.sign-up {
+  margin-top: 0px;
+  background-color: transparent;
+  color: #2d0b02;
+  opacity: .75;
+  margin-left: 800px;
+  width: 33%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.sign-up li {
+  display: inline-block;
+  list-style-type: none;
+  background-color: #f7f2e4;
+  padding-left: 40px;
+  font-size: 20px;
+  padding-right: 100px;
+  height: 35px;
+  line-height: 35px;
+  -webkit-transform: rotate(-11deg); 
+  -moz-transform: rotate(-11deg); 
+}*/
+
+
+ 

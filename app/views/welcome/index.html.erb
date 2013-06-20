@@ -1,3 +1,38 @@
+
+
+
+<div class='front-page'
+  <ul class='imagine'>
+    <li><strong>Imagine.</strong></li>
+  </ul>
+</div>
+
+
+  <ul class='power'>
+    <li>The power to choose your <strong>ShopNextDoor</strong></li>
+    <li class='offset3'>The power to choose your <strong>ShopNextDoor</strong></li>
+  </ul>
+
+<div class = 'later'>
+   <ul class='log-in'>
+    <li id='log-in'><a href="#">Log In</a></li>
+    <li id='sign-up'><a href="#">Sign Up</a></li>
+  </ul>  
+</div>
+
+<div class='hidden' id='sign-up-form'>
+  <%= render 'users/user_form', :user => @user %>
+</div>
+
+<div class='hidden' id='log-in-form'>
+  <%= render 'users/user_signin_form', :user => @user %>
+</div>
+
+
+
+
+
+<!-- 
 <div id='welcome-nav'>
   <div class="navbar navbar-inverse navbar-fixed-top">
     <ul class='nav'>
@@ -51,5 +86,5 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> -->
 
