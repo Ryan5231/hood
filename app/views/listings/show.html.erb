@@ -72,9 +72,10 @@
         <h3><%= link_to 'Create Comment', "#", :class => 'new_comment_button' %></h3>
         <%= render 'new_comment_form', :comment => @comment, :listing => @listing %>
         <div class='comment-template hidden'>
-          <img alt="temp" src="pending">
+          <img alt="temp" src="">
           <h3 class='comment'></h3>
         </div>
+        <div id='comment'>
         <% @listing.comments.each do |comment| %>
         <% user = User.find(comment.user_id) %>
         <div class='comment-user-pic'>
@@ -82,6 +83,7 @@
           <h3 class='comment'><%= comment.content %></h3>
         </div>
         <% end %>
+      </div>
       </div>
     </div>
     <div class='span6'>
