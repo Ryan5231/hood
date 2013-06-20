@@ -51,10 +51,3 @@ vote = Vote.create(neighbor_id: 1, choice_id: 1)
 neighbor.votes << vote
 neighbor.save
 realtor.save
-
-
-
-
-
-
-
