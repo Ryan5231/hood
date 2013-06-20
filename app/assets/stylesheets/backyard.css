@@ -1,5 +1,11 @@
 textarea {
   height: 150px;
+  width: 100%;
+}
+
+#comment-box textarea {
+  height: 40px;
+  width: 100%;
 }
 
 html {
@@ -44,7 +50,7 @@ body#welcome-page {
 
 .comment {
   border-radius: 2px;
-  width: 50%;
+  
   border-bottom-right-radius: 30px;
   border-top-right-radius: 30px;
 }
@@ -135,7 +141,7 @@ body#welcome-page {
 .backyard-box {  
   
   padding: 19px 29px 29px;
-  margin: 1px;  
+  margin: 10px 1px 1px 1px;  
   background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
@@ -165,9 +171,6 @@ body#welcome-page {
   float: left;
 }
 
-#comment_content {
-  width: 50%;
-}
 
 #map-canvas { 
   float: right;

@@ -56,36 +56,6 @@
   <div class='row-fluid'>
     <div class='span6'>
       <div class='backyard-box'>
-        a
-      </div>
-    </div>
-    <div class='span6'>
-      
-        b
-      </div>
-    </div>
-  </div>
-  <div class='row-fluid'>
-    <div class='span6'>
-      <div class='backyard-box'>
-        <h3 class='subhead'>add your two cents here.</h3>
-        <h3><%= link_to 'Create Comment', "#", :class => 'new_comment_button' %></h3>
-        <%= render 'new_comment_form', :comment => @comment, :listing => @listing %>
-        <div class='comment-template hidden'>
-          <img alt="temp" src="pending">
-          <h3 class='comment'></h3>
-        </div>
-        <% @listing.comments.each do |comment| %>
-        <% user = User.find(comment.user_id) %>
-        <div class='comment-user-pic'>
-          <%= image_tag user.image_url(:mini).to_s if user.image_url%>
-          <h3 class='comment'><%= comment.content %></h3>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <div class='span6'>
-      <div class='backyard-box'>
         <h3 class='subhead'>what am i?</h3>
         <h1><%= @listing.title %></h1>
         <h3><%= @listing.address %></h3>
@@ -93,6 +63,50 @@
         <%= @listing.description %>
       </div>
     </div>
-    
+    <div id='comment-box' class='span6'>
+      <div class='backyard-box'>
+        <div class='row-fluid'>
+          <div class='span12'>
+            <h3 class='subhead'>add your two cents here.</h3>
+          </div>
+        </div>
+        <div class='row-fluid'>
+          <div class='span12'>
+            <h3><%= link_to 'Create Comment', "#", :class => 'new_comment_button' %></h3>
+          </div>
+        </div>
+        <div class='row-fluid'>
+          <div class='span12'>
+            <%= render 'new_comment_form', :comment => @comment, :listing => @listing %>
+            <div class='comment-template hidden'>
+              <img alt="temp" src="pending">
+              <h3 class='comment'></h3>
+            </div>
+          </div>
+        </div>
+        <% @listing.comments.each do |comment| %>
+          <div class='row-fluid'> 
+            <% user = User.find(comment.user_id) %>
+            <div class='span2'>
+              <div class='row-fluid'>
+                <div class='span12'>
+                  <div class='comment-user-pic'>
+                    <%= image_tag user.image_url(:mini).to_s if user.image_url%>
+                  </div>
+                </div>
+              </div>
+              <div class='row-fluid'>
+                <div class='span12'>
+                  <p>- <%= user.username %></p>
+                </div>
+              </div>
+            </div>
+            <div class='span10'>
+              <h4 class='comment'><%= comment.content %></h4>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
