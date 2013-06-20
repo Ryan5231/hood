@@ -18,7 +18,7 @@ function findHood(address, bounds){
       showUpdateView(hood);
     }
     else {
-      alert("Address geocode not successful");
+      console.log("Address geocode not successful");
     }
 	});
 }
@@ -31,7 +31,7 @@ function updateHood(address, bounds){
       $('#neighborhood_name').val(hood);
     }
      else {
-      alert("Address geocode not successful");
+      console.log("Address geocode not successful");
     }
   });
 }
