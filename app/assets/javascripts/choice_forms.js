@@ -11,7 +11,7 @@ $(document).on('ajax:success', '.new_choice', function(event, data){
 
 
 $(document).on('ajax:success', '.choice_vote', function(event, data){
-	var choiceVotes = $(this).find('.vote_count');
+	var choiceVotes = $(this).find('.label vote_count');
   choiceVotes.text(data.votes); 
 }); 
 

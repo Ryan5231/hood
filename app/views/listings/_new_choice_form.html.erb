@@ -1,14 +1,16 @@
 <div class='row-fluid sub-box-clear'>
   
     <%= form_for @choice, :remote => true do |f|%>
-      <div id='new-choice' class='span2'>
-        <%= f.label :content, "Add a suggestion!" %>  
+      <div class='span2'>
+        <img alt='temp' src="<%= current_user.image_url(:mini) %>">
       </div>
       <div id='new-choice' class='span5'>
         <%= f.text_field :content, :placeholder => "e.g., 'A Pet Store'" %>
       </div>
+      <div id='empty-div' class='span1'>
+      </div>
         <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
-      <div class='span2'>
+      <div id='choice-button' class='span2'>
         <%= f.submit "Create Choice", :class => "btn" %>
       </div>
     <% end %>
