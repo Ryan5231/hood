@@ -2,7 +2,7 @@
 <div class='container'>    
   <div class='row-fluid'>
     <div class='span12'>
-      <h4><%= link_to "Edit Listing", edit_listing_path(@listing) %></h4>      
+      <h4><%= link_to "Edit Listing", edit_listing_path(@listing) %></h4>
     </div>
   </div>
   <div class='row-fluid'>
@@ -62,17 +62,10 @@
           </div>
         </div>
         <div class='row-fluid'>
-          <div class='span12'>
-            <h3><%= link_to 'Create Comment', "#", :class => 'new_comment_button' %></h3>
-          </div>
-        </div>
-        <div class='row-fluid'>
-          <div class='span12'>
+          
             <%= render 'new_comment_form', :comment => @comment, :listing => @listing %>
-          </div>
+          
         </div>
-        
-        
         <div id='comment'>
         <% @listing.comments.reverse.each do |comment| %>
           <div class='row-fluid'>

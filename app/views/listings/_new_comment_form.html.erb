@@ -1,9 +1,17 @@
-<div class='comment_form hidden'>
- <%= form_for comment, :remote => true do |f|%>
-    <%= f.label :content, "Comment" %>
-    <%= f.text_area :content, :cols => 100, :rows => 4 %>
-    <%=f.hidden_field(:user_id, :value => current_user.id) %><br>
-    <%=f.hidden_field(:listing_id, :value => listing.id) %><br>
-    <%= f.submit "Submit Comment" %>
-  <% end %>
+<div class='comment_form'>
+  <div class='row-fluid sub-box'>
+    <div class='span3'>
+      <%= form_for comment, :remote => true do |f|%>
+        <img alt='temp' src="<%= current_user.image_url(:mini) %>">
+    </div>
+    <div class='span6'>
+        <%= f.text_field :content, :id => 'comment-text-field', :placeholder => 'Write your comment here' %>
+    </div>
+        <%=f.hidden_field(:user_id, :value => current_user.id) %>
+        <%=f.hidden_field(:listing_id, :value => listing.id) %>
+    <div class='span3'>
+        <%= f.submit "Submit!", :id => 'comment-button', :class => 'btn btn-success' %>
+    <% end %>
+    </div>
+  </div>
 </div>

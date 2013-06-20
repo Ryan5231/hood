@@ -15,11 +15,11 @@ $(document).on('ajax:success', '.choice_vote', function(event, data){
   choiceVotes.text(data.votes); 
 }); 
 
-$(document).on('click','.new_comment_button', function(event){
-	event.preventDefault();
-	$('.comment_form').removeClass('hidden');
-	$(this).hide();
-});
+// $(document).on('click','.new_comment_button', function(event){
+// 	event.preventDefault();
+// 	$('.comment_form').removeClass('hidden');
+// 	$(this).hide();
+// });
 
 $(document).on('ajax:success', '.new_comment', function(event, data){
  // var commentTemplate = $('.comment-template');
@@ -32,7 +32,7 @@ $(document).on('ajax:success', '.new_comment', function(event, data){
  $('#comment').prepend(comment);
  $('#comment_content').val("");
  $('.new_comment_button').show();
- $('.comment_form').addClass('hidden');
+ // $('.comment_form').addClass('hidden');
 });
 
 function htmlTemplate(data) {
