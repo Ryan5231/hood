@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @hood = @listing.neighborhood
     @choice =Choice.new
+    @comment =Comment.new
   end
 
   def new
@@ -33,6 +34,7 @@ class ListingsController < ApplicationController
   def edit
     @neighborhoods = Neighborhood.all
     @listing = Listing.find(params[:id])
+    @hood = @listing.neighborhood
   end
 
   def update

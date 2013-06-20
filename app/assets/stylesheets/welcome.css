@@ -1,3 +1,8 @@
+.error-message {
+  color: red;
+  font-size: 1.5em;
+}
+
 .nav {
   padding-left: 40px;
 }
@@ -7,7 +12,7 @@
 }
 
 * {
-  font-family: 'Raleway', Helvetica
+  font-family: 'Raleway', Helvetica;
   font-weight: 200;
 }
 

@@ -1,6 +1,16 @@
-<%= form_for @choice, :remote => true do |f|%>
-  <%= f.label :content, "Add your own suggestion here"%>
-  <%= f.text_field :content, :placeholder => "e.g., 'A Pet Store'" %>
-  <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
-  <%= f.submit "Create Choice" %>
-<% end %>
+<div class='row-fluid sub-box-clear'>
+  
+    <%= form_for @choice, :remote => true do |f|%>
+      <div id='new-choice' class='span2'>
+        <%= f.label :content, "Add your own suggestion here", :class => 'subhead' %>  
+      </div>
+      <div id='new-choice' class='span6'>
+        <%= f.text_field :content, :placeholder => "e.g., 'A Pet Store'" %>
+      </div>
+        <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
+      <div class='span2'>
+        <%= f.submit "Create Choice", :class => "create_choice" %>
+      </div>
+    <% end %>
+  
+</div>
