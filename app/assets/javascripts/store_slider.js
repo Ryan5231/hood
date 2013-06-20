@@ -18,7 +18,6 @@ $(document).ready(function() {
   }
 
   setInterval( function() {
-    console.log('hey')
     slide()
   }, 4000 )
 
