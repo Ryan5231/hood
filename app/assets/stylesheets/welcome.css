@@ -3,12 +3,13 @@
   font-size: 1.5em;
 }
 
-.nav {
-  padding-left: 40px;
-}
 
-#welcome-container {
+body#welcome-page {
+   background: url('coffee.jpg') no-repeat center center fixed;
+   background-size: 108%;
   width: 100%;
+  height: 100%;
+  position: fixed;
 }
 
 * {
@@ -16,64 +17,6 @@
   font-weight: 200;
 }
 
-.store-pic {
-
-  height: 100%;
-  width: 100%;
-  background-repeat: none;
-}
-
-#store-slider {
-  background-image: url('storefront.jpg');
-  background-size: cover;
-  padding-top: 0;
-  margin-top: 0;
-  width: 100%;
-  height: 100%;
-
-}
-
-#welcome-bar {
-  padding: 19px 29px 29px;
-  margin: 0 auto 20px;  
-  display: absolute;  
-}
-
-.slider-container {
-
-  width: 100%;
-  overflow: hidden;
-}
-
-.stores {
-  margin: 0;
-  padding: 0;
-  width: 400%;
-  height: inherit;
-}
-
-.stores li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.store-pic {
-  width: 25%;
-  height: inherit;
-  float: left;
-}
-
-.radio {
-display: inline-block;
-padding: 14px;
-}
-
-.label {
-display: inline-block;
-padding-left: 14px;
-font-size: 14px;
-}
 
 .notice {
   color: red;
@@ -85,44 +28,7 @@ font-size: 14px;
   padding-bottom: 20px;
 }
 
-/*#welcome-hood {
-  background: url('storefront.jpg')
-  background-color: yellow;
-  color: white;
-}*/
 
-/*#welcome-page {
-  background: url('storefront.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
-
-/*#sign-in {
-  background-color: transparent;
-}
-*/
-#welcome-nav {
-  width: 100%;
-  height: 60px;
-}
-
-
-#welcome-tagline {
-  color: white;
-}
-
-/*h1 {
-  color: #f7f2e4;
-  font-size: 80px;
-  padding-top: 60px;
-  float; left
-}*/
-
-.nav{
-  float: right;
-}
 
 .front-page {
   background-color: #324785;
@@ -144,7 +50,7 @@ font-size: 14px;
 }
 
 .power {
-  margin-top: 310px;
+  margin-top: 328px;
   color: #2d0b02;
   background-color: #f7f2e4;
   opacity: .6;
@@ -185,7 +91,7 @@ font-size: 14px;
 
 .later {
   display: block;
-  margin-top: 595px;
+  margin-top: 667px;
   -webkit-transform: rotate(-11deg); 
   -moz-transform: rotate(-11deg);
   width: 70%;
@@ -212,10 +118,6 @@ font-size: 14px;
   font-size: 40px;
 }
 
-#welcome-page {
-  position: fixed;
-  width: 100%;
-}
 
 
 #log-in-form {

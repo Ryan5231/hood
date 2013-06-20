@@ -14,9 +14,6 @@ body {
   background-color: #FCFCFC
 }
 
-body#welcome-page {
-   background: url('coffee.jpg') no-repeat center center fixed;
-}
 
 .breadcrumb {
   background-color: #f7f2e4;
