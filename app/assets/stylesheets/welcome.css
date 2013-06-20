@@ -144,42 +144,55 @@ font-size: 14px;
 }
 
 .power {
-  margin-top: 200px;
+  margin-top: 310px;
   color: #2d0b02;
   background-color: #f7f2e4;
-  opacity: .75;
+  opacity: .6;
   height: 50px;
   line-height: 50px;
+  width: 45%;
+  float: right;
 }
 
 .power li {
-  font-size: 20px;
+  font-size: 25px;
   list-style-type: none;
   display: inline;
-  padding-right: 20px;
   padding-top: 35px;
+  padding-left: 55px;
 }
 
 .log-in {
-  margin-top: 179px;
-  background-color: white;
+  margin-top: 210px;
+  background-color: #f7f2e4;
   color: #2d0b02;
-  opacity: .75;
+  opacity: .6;
   margin-left: 500px;
   width: 50%;
-  height: 50px;
-  line-height: 50px;
+  height: 42px;
+  line-height: 55px;
+}
 
+.log-in li {
+  /*margin-top: 25px;*/
+}
+
+.log-in a {
+  color: #2d0b02;
+  margin-top: 25px;
 }
 
 
 .later {
   display: block;
-  margin-top: 250px;
+  margin-top: 595px;
   -webkit-transform: rotate(-11deg); 
   -moz-transform: rotate(-11deg);
-  width: 50%;
+  width: 70%;
+  clear: both;
+ 
 }
+
 
 .log-in ul {
   -webkit-transform: rotate(-11deg); 
@@ -195,14 +208,37 @@ font-size: 14px;
   -webkit-transform: rotate(-11deg); 
   -moz-transform: rotate(-11deg); 
   padding-left: 75px;
+  padding-top: 65px;
+  font-size: 40px;
 }
 
+#welcome-page {
+  position: fixed;
+  width: 100%;
+}
+
+
 #log-in-form {
-  
+  position: absolute;
+  top: 25%;
+  left: 9%;
+}
+
+#sign-in{
+  background-color: #f2f2f2;
 }
 
 #sign-up-form {
+  position: absolute;
+  top: 20%;
+  left: 9%;
 }
+
+#sign-up {
+  background-color: #f2f2f2;
+}
+
+
 /*
 .log-in li {
   display: inline-block;

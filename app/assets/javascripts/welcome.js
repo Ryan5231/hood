@@ -6,7 +6,7 @@ $(document).on('click', '#log-in a', function(e){
 });
 
 
-$(document).on('click', '#sign-up a', function(e){
+$(document).on('click', '#sign-up1 a', function(e){
   e.preventDefault();
     $('#log-in-form').addClass('hidden');
     $('#sign-up-form').toggleClass('hidden');
