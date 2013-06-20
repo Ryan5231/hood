@@ -2,14 +2,14 @@
   
     <%= form_for @choice, :remote => true do |f|%>
       <div id='new-choice' class='span2'>
-        <%= f.label :content, "Add your own suggestion here", :class => 'subhead' %>  
+        <%= f.label :content, "Add a suggestion!" %>  
       </div>
-      <div id='new-choice' class='span6'>
+      <div id='new-choice' class='span5'>
         <%= f.text_field :content, :placeholder => "e.g., 'A Pet Store'" %>
       </div>
         <%=f.hidden_field(:listing_id, :value => "#{listing.id}") %>
       <div class='span2'>
-        <%= f.submit "Create Choice", :class => "create_choice" %>
+        <%= f.submit "Create Choice", :class => "btn" %>
       </div>
     <% end %>
   
