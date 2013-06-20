@@ -15,20 +15,35 @@ $(document).on('ajax:success', '.choice_vote', function(event, data){
   choiceVotes.text(data.votes); 
 }); 
 
-$(document).on('click','.new_comment_button', function(event){
-	event.preventDefault();
-	$('.comment_form').removeClass('hidden');
-	$(this).hide();
-});
+// $(document).on('click','.new_comment_button', function(event){
+// 	event.preventDefault();
+// 	$('.comment_form').removeClass('hidden');
+// 	$(this).hide();
+// });
 
 $(document).on('ajax:success', '.new_comment', function(event, data){
- var commentTemplate = $('.comment-template');
- var newComment = commentTemplate.clone();
- newComment.removeClass('hidden');
- newComment.find('img').attr('src', data.image_url);
- newComment.find('h3').text(data.comment.content);
- $('#comment').append(newComment);
+ // var commentTemplate = $('.comment-template');
+ var comment = htmlTemplate(data);
+ console.log(data.image_url);  
+ // var newComment = commentTemplate.clone();
+ // newComment.removeClass('hidden');
+ // newComment.find('img').attr('src', data.image_url);
+ // newComment.find('h3').text(data.comment.content);
+ $('#comment').prepend(comment);
  $('#comment_content').val("");
  $('.new_comment_button').show();
- $('.comment_form').addClass('hidden');
+ // $('.comment_form').addClass('hidden');
 });
+
+function htmlTemplate(data) {
+  var html = '<div class="row-fluid comment-template">'
+  html +=      '<div class="span3">'
+  html +=        '<img alt="temp" src="' + data.image_url + '">'
+  html +=      '</div>'
+  html +=      '<div class="span9">'
+  html +=        '<h3 class="comment">' + data.comment.content + '</h3>' 
+  html +=      '</div>'
+  html +=    '</div>'
+  
+  return html
+}

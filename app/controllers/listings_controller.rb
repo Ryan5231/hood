@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
     @hood = @listing.neighborhood
     @choice =Choice.new
     @comment =Comment.new
+    
   end
 
   def new

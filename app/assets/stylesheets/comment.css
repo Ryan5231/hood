@@ -11,3 +11,11 @@
 .comment .subhead {
   font-size: 2em;
 }
+
+#comment-text-field {
+  margin-top: 29px
+}
+
+#comment-button {
+  margin-top: 9px
+}
