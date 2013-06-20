@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     @hood = Neighborhood.find(params[:neighborhood])
     user.neighborhoods.destroy_all
     user.neighborhoods << @hood
-    if user.update_attributes(params[:neighbor])
+    if user.update_attributes(params[:realtor]) || user.update_attributes(params[:neighbor])
       redirect_to user
     else
       redirect_to edit_user_path(@user)
