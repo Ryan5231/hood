@@ -33,7 +33,7 @@ body#welcome-page {
 .front-page {
   background-color: #324785;
   opacity: .9;
-  margin-top: 85px;
+  margin-top: 60px;
   margin-left: 20px;
   height: 60px;
   line-height: 55px;
@@ -50,7 +50,7 @@ body#welcome-page {
 }
 
 .power {
-  margin-top: 328px;
+  margin-top: 360px;
   color: #2d0b02;
   background-color: #f7f2e4;
   opacity: .6;
@@ -91,11 +91,12 @@ body#welcome-page {
 
 .later {
   display: block;
-  margin-top: 667px;
+  margin-top: 690px;
   -webkit-transform: rotate(-11deg); 
   -moz-transform: rotate(-11deg);
-  width: 70%;
+  width: 65%;
   clear: both;
+  margin-left: 280px;
  
 }
 
