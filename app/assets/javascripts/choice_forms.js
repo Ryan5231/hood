@@ -11,7 +11,7 @@ $(document).on('ajax:success', '.new_choice', function(event, data){
 
 
 $(document).on('ajax:success', '.choice_vote', function(event, data){
-	var choiceVotes = $(this).find('.vote_count');
+	var choiceVotes = $(this).find('.label vote_count');
   choiceVotes.text(data.votes); 
 }); 
 
@@ -30,7 +30,7 @@ $(document).on('ajax:success', '.new_comment', function(event, data){
  // newComment.find('img').attr('src', data.image_url);
  // newComment.find('h3').text(data.comment.content);
  $('#comment').prepend(comment);
- $('#comment_content').val("");
+ $('#comment-text-field').val("");
  $('.new_comment_button').show();
  // $('.comment_form').addClass('hidden');
 });
