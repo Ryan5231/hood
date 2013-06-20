@@ -131,11 +131,11 @@ body#welcome-page {
 .sub-box-clear .span2 {
   margin: 20px;
 }
-.backyard-box {
+
+.backyard-box {  
   
-  /*max-width: 300px;*/
   padding: 19px 29px 29px;
-  margin: 10px 20px 10px 20px;  
+  margin: 1px;  
   background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
