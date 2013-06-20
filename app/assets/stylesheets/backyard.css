@@ -50,13 +50,21 @@ body#welcome-page {
 }
 
 .navbar {
-/*  background-image: url('darkgrass.jpg');
-  background-color: white;
-  opacity: 0.9;*/
+  background-image: none;
+  background-color: #324785;
+  opacity: .9;
+}
+
+/* TODO: this is ugly, we need to find a way to override without using important */
+.navbar .nav > li > a {
+  color: white;
+}
+.navbar .nav > li > a:hover {
+  color: gray;
 }
 
 .navbar-inverse {
-  color: #fff;
+  color: red;
 }
 
 #profile-pic {
