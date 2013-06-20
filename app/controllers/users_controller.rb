@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       @user.neighborhoods << @hood
       if @user.save
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to @hood
       else
       @errors = @user.errors.full_messages
       @neighborhoods = Neighborhood.all

@@ -10,7 +10,7 @@ module Authentication
     @user = User.find_by_email(info[:email])
     if @user && @user.authenticate(info[:password])
       session[:id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to @user.neighborhoods.first
     else
       flash[:notice] = "Login Information Incorrect. Please Try Again."
       redirect_to root_path
