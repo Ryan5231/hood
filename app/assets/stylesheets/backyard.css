@@ -1,5 +1,7 @@
-textarea {
+
+.form-horizontal textarea {
   height: 150px;
+  
 }
 
 html {
@@ -39,13 +41,6 @@ body {
  margin-top: 4em;
 }
 
-.comment {
-  border-radius: 2px;
-  width: 50%;
-  border-bottom-right-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
 .masthead {
   padding-top: 70px;
 }
@@ -64,7 +59,6 @@ body {
 .navbar .nav > li > a:hover {
   color: gray;
 }
-
 
 #profile-pic {
   background-image: url('placeholder.png');
@@ -132,7 +126,7 @@ body {
 .backyard-box {  
   
   padding: 19px 29px 29px;
-  margin: 1px;  
+  margin: 10px 1px 1px 1px;  
   background-color: #fff;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
@@ -162,9 +156,6 @@ body {
   float: left;
 }
 
-#comment_content {
-  width: 50%;
-}
 
 #map-canvas { 
   float: right;
@@ -196,6 +187,3 @@ body {
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
-
-
-

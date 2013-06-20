@@ -1,0 +1,13 @@
+#comment-box textarea {
+  height: 40px;
+  width: 100%;
+}
+.comment {
+  border-radius: 2px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.comment .subhead {
+  font-size: 2em;
+}
