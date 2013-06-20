@@ -22,4 +22,5 @@ Hood::Application.routes.draw do
   match 'users/:id/add_photo' => 'users#add_photo', :as => 'add_user_photo'
   match '/listings/:id/comment/edit' => 'comments#edit', :as => 'edit_comment'
   match '/listings/:id/comment/update' => 'comments#update', :as => 'update_comment'
+  match '/sessions/out' => 'sessions#out', :as => 'out'
 end

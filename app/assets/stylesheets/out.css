@@ -1,0 +1,67 @@
+
+.ryobb {
+  width: 400px;
+  height:400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 200px;
+}
+
+.offer {
+  opacity: 0;
+  -webkit-transition: 0.5s all ease-in;
+  padding: 30px;
+}
+
+.zero {
+  opacity: 0;
+}
+
+.show {
+  opacity: 100;
+}
+
+.countdown-container {
+  text-align: center;
+  position: relative;
+  height: inherit;
+  width: inherit;
+}
+
+#countdown{
+  color: #fff;
+  font-family: arial, sans-serif;
+  font-size: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px; /* MAGIC NUM */
+  line-height: 400px;
+  height: 400px;
+}
+
+.cover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #333;
+  border-radius: 200px;
+  opacity: 0.8;
+}
+
+h1 {
+  position: absolute;
+  top: -50px; /* MAGIC NUM */
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -40px; /* MAGIC NUM */
+}
+
+body {
+  background: url('bookstore.jpg');
+}

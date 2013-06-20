@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="/assets/out.css?body=1" media="all" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+  <div class='ryobb'>
+    <div class='countdown-container'>
+      <h1>WAIT</h1>
+      <div id='countdown'>
+        5
+      </div>
+      <div class='offer'>
+        anything
+      </div>
+      <span class="cover"></span>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>
+
+  var i = 5
+  ryobb = setInterval(function(){
+    $('#countdown').html(i)
+    i--
+    if (i<0){
+      clearInterval(ryobb);
+      $('#countdown').addClass('zero')
+      showOffer()
+    }
+  }, 1000)
+
+  var showOffer = function(){
+    $('.offer').addClass('show')
+  }
+
+
+
+
+  </script>
+</body>
+</html>
